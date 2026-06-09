@@ -212,11 +212,11 @@ export default async function Home() {
               return (
                 <ScrollReveal delay={(idx + 1) * 150} key={exp.id}>
                   <div className="exp-card">
-                    <div className="exp-card-image">
+                    <div className="exp-card-image" style={{position: 'relative'}}>
                       {isAonic ? (
                         <ExpSlideshow images={aonicPhotos} interval={3500} />
                       ) : exp.image ? (
-                        <Image src={exp.image} alt={exp.organization} fill style={{objectFit: 'cover'}} />
+                        <ExpSlideshow images={[exp.image]} interval={9999999} />
                       ) : (
                         <div className="exp-card-image-placeholder">
                           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
