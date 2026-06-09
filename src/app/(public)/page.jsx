@@ -9,7 +9,7 @@ export default async function Home() {
   const education = await db.education.findMany({ orderBy: { yearStart: 'desc' } });
   
   // Fetch latest 2 of everything else for highlighting
-  const experiences = await db.experience.findMany({ take: 2, orderBy: { id: 'asc' } }); 
+  const experiences = await db.experience.findMany({ take: 2, where: { type: 'work' }, orderBy: { id: 'asc' } }); 
   const papers = await db.paper.findMany({ take: 2, orderBy: { year: 'desc' } });
   const books = await db.book.findMany({ take: 2, orderBy: { year: 'desc' } });
   const projects = await db.project.findMany({ take: 2, orderBy: { createdAt: 'desc' } });
