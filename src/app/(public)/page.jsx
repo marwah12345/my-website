@@ -203,7 +203,6 @@ export default async function Home() {
               // Aonic gets a multi-photo slideshow
               const aonicPhotos = [
                 '/uploads/aonic-1.jpeg',
-                '/uploads/aonic-2.jpg',
                 '/uploads/aonic-3.jpg',
                 '/uploads/aonic-4.png',
               ];

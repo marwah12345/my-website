@@ -15,16 +15,16 @@ export default function ExpSlideshow({ images = [], interval = 3500 }) {
 
   // Start when scrolled into view
   useEffect(() => {
-    if (!ref.current || images.length <= 1) return;
+    if (!ref.current) return;
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setActive(true); },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
     observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [images]);
+  }, []);
 
-  // Advance slides only when active
+  // Advance slides only when active and multiple images
   useEffect(() => {
     if (!active || images.length <= 1) return;
     const timer = setInterval(() => {
@@ -47,7 +47,7 @@ export default function ExpSlideshow({ images = [], interval = 3500 }) {
           style={{
             objectFit: "cover",
             opacity: idx === currentIndex ? 1 : 0,
-            transition: "opacity 2s ease-in-out",
+            transition: images.length > 1 ? "opacity 2s ease-in-out" : "none",
           }}
         />
       ))}
