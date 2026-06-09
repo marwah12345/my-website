@@ -178,49 +178,50 @@ export default async function Home() {
       </section>
 
       {/* INDUSTRY EXPERIENCE SECTION */}
-      <section className="section section-alt" id="experience" style={{paddingTop: '6rem', paddingBottom: '6rem'}}>
+      <section className="exp-section" id="experience">
         <div className="container">
-          <ScrollReveal delay={100} styleClass="flex justify-between items-end mb-4" style={{borderBottom: '1px solid var(--border)', paddingBottom: '1.5rem'}}>
-            <div>
-              <span style={{display: 'inline-block', background: 'rgba(30,58,138,0.08)', color: 'var(--primary)', fontWeight: 700, fontSize: '0.78rem', letterSpacing: '2px', textTransform: 'uppercase', padding: '0.3rem 0.9rem', borderRadius: '999px', marginBottom: '0.75rem'}}>Career</span>
-              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: 'var(--primary)'}}>Industry Experience</h2>
-              <p className="text-secondary">Professional roles where research meets real-world impact.</p>
+
+          {/* Section header */}
+          <ScrollReveal delay={100} styleClass="exp-section-header">
+            <div className="exp-header-left">
+              <div className="exp-eyebrow">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                Latest Industry Work
+              </div>
+              <h2 className="exp-section-title">Industry Experience</h2>
+              <p className="exp-section-sub">The most recent roles where I built real-world software before returning to full-time research.</p>
             </div>
-            <Link href="/experience" className="btn btn-secondary" style={{marginBottom: '0.5rem'}}>Full Timeline &rarr;</Link>
+            <Link href="/experience" className="exp-view-btn">
+              View Full Experience
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </Link>
           </ScrollReveal>
 
-          <div className="exp-cards mt-4">
+          {/* Cards — horizontal layout */}
+          <div className="exp-cards">
             {experiences.map((exp, idx) => (
               <ScrollReveal delay={(idx + 1) * 150} key={exp.id}>
                 <div className="exp-card">
-                  {/* Image panel */}
                   <div className="exp-card-image">
                     {exp.image
                       ? <Image src={exp.image} alt={exp.organization} fill style={{objectFit: 'cover'}} />
                       : <div className="exp-card-image-placeholder">
-                          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
                         </div>
                     }
                     <div className="exp-card-image-overlay" />
-                    <span className="exp-card-badge">{exp.dateRange}</span>
                   </div>
-
-                  {/* Content panel */}
                   <div className="exp-card-body">
+                    <span className="exp-card-badge">{exp.dateRange}</span>
                     <div className="exp-card-org">{exp.organization}</div>
                     <h3 className="exp-card-title">{exp.title}</h3>
-                    {exp.description && (
-                      <p className="exp-card-desc">{exp.description}</p>
-                    )}
-                    <div className="exp-card-type">
-                      <span className="exp-type-dot" />
-                      {exp.type === 'research' ? 'Research' : exp.type === 'volunteer' ? 'Volunteer' : 'Industry'}
-                    </div>
+                    {exp.description && <p className="exp-card-desc">{exp.description}</p>}
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+
         </div>
       </section>
 
