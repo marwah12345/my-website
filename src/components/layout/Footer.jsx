@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer border-t mt-auto">
       <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
         <div className="footer-bottom">
-          <p>&copy; {year} Marwah Zaid. All rights reserved.</p>
+          <p>&copy; {year} Dr. Marwah Zaid. All rights reserved.</p>
         </div>
       </div>
     </footer>

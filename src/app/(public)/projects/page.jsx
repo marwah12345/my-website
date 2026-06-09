@@ -5,8 +5,8 @@ import Link from "next/link";
 import "./projects.css";
 
 export const metadata = {
-  title: "Projects | Marwah Zaid",
-  description: "A showcase of AI, medical imaging, and software development projects by Marwah Zaid.",
+  title: "Projects | Dr. Marwah Zaid",
+  description: "A showcase of AI, medical imaging, and software development projects by Dr. Marwah Zaid.",
 };
 
 export default async function ProjectsPage() {

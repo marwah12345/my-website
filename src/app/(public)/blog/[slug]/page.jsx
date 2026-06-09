@@ -33,7 +33,7 @@ export default async function BlogPostPage({ params }) {
                 {post.title}
               </h1>
               <div style={{color: 'var(--text-secondary)', fontSize: '1.1rem', fontWeight: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem'}}>
-                <span>Marwah Zaid</span>
+                <span>Dr. Marwah Zaid</span>
                 <span style={{color: 'var(--border)'}}>|</span>
                 <span>{new Date(post.createdAt).toLocaleDateString("en-US", { month: 'long', day: 'numeric', year: 'numeric' })}</span>
               </div>

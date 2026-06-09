@@ -11,7 +11,7 @@ export default function Navbar() {
     <header className="navbar-header">
       <div className="container flex items-center justify-between navbar-container">
         <Link href="/" className="logo">
-          Dr. Researcher
+          Dr. Marwah
         </Link>
         <nav className="nav-links">
           <Link href="/" className={pathname === "/" ? "active" : ""}>

@@ -21,7 +21,7 @@ export default async function Home() {
       <section className="hero">
         <div className="container flex items-center gap-4" style={{flexWrap: 'wrap-reverse'}}>
           <ScrollReveal delay={100} styleClass="hero-content">
-            <h1 className="hero-title">Marwah Zaid</h1>
+            <h1 className="hero-title">Dr. Marwah Zaid</h1>
             <h2 className="hero-subtitle">PhD Researcher in AI & Medical Imaging</h2>
             <p className="mb-4 text-secondary" style={{fontSize: '1.05rem', lineHeight: '1.8'}}>
               I am a PhD Researcher at Multimedia University, specializing in brain MRI analysis and predictive modeling. 
@@ -35,18 +35,37 @@ export default async function Home() {
             <div className="flex gap-4 items-center mt-6">
               <a href="#about" className="btn btn-primary" style={{padding: '0.8rem 1.5rem'}}>Discover My Journey ↓</a>
             </div>
-            <div className="flex gap-4 mt-6" style={{flexWrap: 'wrap'}}>
-              <a href="https://scholar.google.com/citations?user=hlIQz8IAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="Google Scholar" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', background: 'var(--bg-secondary)', color: 'var(--primary)', transition: 'all 0.3s'}}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M12 3a9 9 0 0 0-9 9h18a9 9 0 0 0-9-9Z"/><path d="M12 3v18"/><path d="M3 12h18"/></svg>
+            <div className="social-links mt-6">
+              {/* Google Scholar */}
+              <a href="https://scholar.google.com/citations?user=hlIQz8IAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="Google Scholar">
+                <span className="social-pill-icon" style={{background: 'rgba(66,133,244,0.15)', color: '#4285F4'}}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+                </span>
+                <span className="social-pill-label">Google Scholar</span>
               </a>
-              <a href="https://orcid.org/0009-0002-3079-0106" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="ORCID" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', background: 'var(--bg-secondary)', color: 'var(--primary)', transition: 'all 0.3s'}}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 9v6"/><path d="M11 9v6h3.5a3 3 0 0 0 0-6H11z"/></svg>
+
+              {/* ORCID */}
+              <a href="https://orcid.org/0009-0002-3079-0106" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="ORCID">
+                <span className="social-pill-icon" style={{background: 'rgba(166,206,57,0.15)', color: '#A6CE39'}}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.684 3.559h1.369v9.863H6.685V7.937zm3.56 0h3.69c3.521 0 5.36 2.544 5.36 4.928 0 2.434-1.839 4.935-5.36 4.935h-3.69V7.937zm1.369 1.247v7.369h2.227c2.546 0 4.003-1.731 4.003-3.683 0-1.952-1.457-3.686-4.003-3.686H11.614z"/></svg>
+                </span>
+                <span className="social-pill-label">ORCID</span>
               </a>
-              <a href="https://www.researchgate.net/profile/Marwah-Al-Helali?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="ResearchGate" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', background: 'var(--bg-secondary)', color: 'var(--primary)', transition: 'all 0.3s'}}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+
+              {/* ResearchGate */}
+              <a href="https://www.researchgate.net/profile/Marwah-Al-Helali?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="ResearchGate">
+                <span className="social-pill-icon" style={{background: 'rgba(0,204,136,0.15)', color: '#00CC88'}}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.66 12.66 0 0 0-.208 1.284c-.022.27-.032.535-.032.799v3.948c0 .271.01.553.032.844.053.627.181 1.186.38 1.674.2.489.498.887.893 1.196.395.309.933.463 1.616.463.618 0 1.117-.161 1.497-.48.38-.32.636-.749.769-1.284.133-.536.2-1.134.2-1.797V8.76h-3.348v1.344h1.898v.686c0 .385-.034.704-.102.958-.068.254-.182.44-.342.559-.159.12-.376.179-.65.179-.285 0-.517-.07-.694-.209-.178-.138-.308-.345-.393-.621a4.273 4.273 0 0 1-.126-1.083V4.328c0-.416.044-.77.13-1.063.087-.293.225-.513.413-.66.19-.148.436-.222.74-.222.3 0 .543.073.728.219.184.147.317.367.398.66.08.293.12.647.12 1.063v.5h1.45V4.328c0-.752-.103-1.384-.308-1.9-.205-.514-.519-.903-.94-1.168C20.758.127 20.231 0 19.586 0zm-8.457.268H9.405L6.07 9.925 2.715.268H0l4.846 12.816-.062.162c-.174.459-.37.795-.587 1.008-.216.213-.5.32-.85.32-.159 0-.328-.02-.509-.06a3.595 3.595 0 0 1-.479-.155l-.457 1.403c.2.088.43.162.688.224.258.061.515.092.77.092.66 0 1.218-.148 1.672-.445.455-.297.834-.752 1.14-1.364.307-.611.598-1.39.873-2.334L11.13.268z"/></svg>
+                </span>
+                <span className="social-pill-label">ResearchGate</span>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="LinkedIn" style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', background: 'var(--bg-secondary)', color: 'var(--primary)', transition: 'all 0.3s'}}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+
+              {/* LinkedIn */}
+              <a href="https://www.linkedin.com/in/marwah-al-helali-a3bb05243/" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="LinkedIn">
+                <span className="social-pill-icon" style={{background: 'rgba(10,102,194,0.15)', color: '#0A66C2'}}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </span>
+                <span className="social-pill-label">LinkedIn</span>
               </a>
             </div>
           </ScrollReveal>
@@ -54,7 +73,7 @@ export default async function Home() {
           <ScrollReveal delay={300} styleClass="hero-image-wrapper mx-auto">
             <Image 
               src="/uploads/profile.png" 
-              alt="Marwah Zaid" 
+              alt="Dr. Marwah Zaid" 
               width={400} 
               height={400} 
               className="hero-image"
