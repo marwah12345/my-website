@@ -287,6 +287,7 @@
   background: #1e293b;
   box-shadow: 0 4px 24px -6px rgba(0,0,0,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  min-height: 160px;
 }
 
 .exp-card:hover {
@@ -297,10 +298,11 @@
 
 .exp-card-image {
   position: relative;
-  width: 130px;
+  width: 220px;
   flex-shrink: 0;
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
   overflow: hidden;
+  min-height: 160px;
 }
 
 .exp-card-image-placeholder {
@@ -366,6 +368,6 @@
     align-items: flex-start;
   }
   .exp-card-image {
-    width: 100px;
+    width: 140px;
   }
 }
