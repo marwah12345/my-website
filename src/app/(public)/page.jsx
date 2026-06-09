@@ -3,6 +3,7 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import ScrollReveal from "@/components/ScrollReveal";
 import AutoSlideshow from "@/components/AutoSlideshow";
+import ExpSlideshow from "@/components/ExpSlideshow";
 import "./home.css";
 
 export default async function Home() {
@@ -189,7 +190,6 @@ export default async function Home() {
                 Latest Industry Work
               </div>
               <h2 className="exp-section-title">Industry Experience</h2>
-              <p className="exp-section-sub">The most recent roles where I built real-world software before returning to full-time research.</p>
             </div>
             <Link href="/experience" className="exp-view-btn">
               View Full Experience
@@ -197,29 +197,43 @@ export default async function Home() {
             </Link>
           </ScrollReveal>
 
-          {/* Cards — horizontal layout */}
+          {/* Cards — vertical with big image on top */}
           <div className="exp-cards">
-            {experiences.map((exp, idx) => (
-              <ScrollReveal delay={(idx + 1) * 150} key={exp.id}>
-                <div className="exp-card">
-                  <div className="exp-card-image">
-                    {exp.image
-                      ? <Image src={exp.image} alt={exp.organization} fill style={{objectFit: 'cover'}} />
-                      : <div className="exp-card-image-placeholder">
+            {experiences.map((exp, idx) => {
+              // Aonic gets a multi-photo slideshow
+              const aonicPhotos = [
+                '/uploads/aonic-1.jpeg',
+                '/uploads/aonic-2.jpg',
+                '/uploads/aonic-3.jpg',
+                '/uploads/aonic-4.png',
+              ];
+              const isAonic = exp.organization.toLowerCase().includes('aonic');
+
+              return (
+                <ScrollReveal delay={(idx + 1) * 150} key={exp.id}>
+                  <div className="exp-card">
+                    <div className="exp-card-image">
+                      {isAonic ? (
+                        <ExpSlideshow images={aonicPhotos} interval={3500} />
+                      ) : exp.image ? (
+                        <Image src={exp.image} alt={exp.organization} fill style={{objectFit: 'cover'}} />
+                      ) : (
+                        <div className="exp-card-image-placeholder">
                           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
                         </div>
-                    }
-                    <div className="exp-card-image-overlay" />
+                      )}
+                      <div className="exp-card-image-overlay" />
+                    </div>
+                    <div className="exp-card-body">
+                      <span className="exp-card-badge">{exp.dateRange}</span>
+                      <div className="exp-card-org">{exp.organization}</div>
+                      <h3 className="exp-card-title">{exp.title}</h3>
+                      {exp.description && <p className="exp-card-desc">{exp.description}</p>}
+                    </div>
                   </div>
-                  <div className="exp-card-body">
-                    <span className="exp-card-badge">{exp.dateRange}</span>
-                    <div className="exp-card-org">{exp.organization}</div>
-                    <h3 className="exp-card-title">{exp.title}</h3>
-                    {exp.description && <p className="exp-card-desc">{exp.description}</p>}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
 
         </div>

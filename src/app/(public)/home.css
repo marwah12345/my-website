@@ -271,23 +271,22 @@
   transform: translateY(-2px);
 }
 
-/* Cards grid — horizontal side-by-side */
+/* Cards grid — vertical, image on top */
 .exp-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.75rem;
 }
 
 .exp-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.07);
   overflow: hidden;
   background: #1e293b;
   box-shadow: 0 4px 24px -6px rgba(0,0,0,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  min-height: 160px;
 }
 
 .exp-card:hover {
@@ -298,11 +297,11 @@
 
 .exp-card-image {
   position: relative;
-  width: 220px;
+  width: 100%;
+  height: 240px;
   flex-shrink: 0;
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
   overflow: hidden;
-  min-height: 160px;
 }
 
 .exp-card-image-placeholder {
@@ -316,15 +315,16 @@
 .exp-card-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, transparent 60%, #1e293b 100%);
+  background: linear-gradient(to top, rgba(10,15,40,0.6) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .exp-card-body {
-  padding: 1.25rem 1.5rem;
+  padding: 1.4rem 1.6rem 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  flex: 1;
 }
 
 .exp-card-badge {
@@ -345,7 +345,7 @@
 }
 
 .exp-card-title {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: #f1f5f9;
   line-height: 1.3;
   margin: 0;
@@ -368,6 +368,6 @@
     align-items: flex-start;
   }
   .exp-card-image {
-    width: 140px;
+    height: 200px;
   }
 }
