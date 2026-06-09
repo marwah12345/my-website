@@ -24,15 +24,6 @@ export default async function Home() {
           <ScrollReveal delay={100} styleClass="hero-content">
             <h1 className="hero-title">Dr. Marwah Zaid</h1>
             <h2 className="hero-subtitle">PhD Researcher in AI & Medical Imaging</h2>
-            <p className="mb-4 text-secondary" style={{fontSize: '1.05rem', lineHeight: '1.8'}}>
-              I am a PhD Researcher at Multimedia University, specializing in brain MRI analysis and predictive modeling. 
-              My research focuses on developing deep learning and physics-informed models to predict tissue deterioration 
-              and model cerebral microbleeds, aiming to generate clinically meaningful insights beyond traditional detection systems.
-            </p>
-            <p className="mb-4 text-secondary" style={{fontSize: '1.05rem', lineHeight: '1.8'}}>
-              I hold a First-Class Honours degree in Computer Science (CGPA 3.73) and have published multiple works in machine 
-              learning and medical AI. I am particularly interested in translating advanced AI methods into real-world clinical applications.
-            </p>
             <div className="social-links mt-6">
 
               {/* Email */}
@@ -92,7 +83,7 @@ export default async function Home() {
           
           <ScrollReveal delay={300} styleClass="hero-image-wrapper mx-auto">
             <Image 
-              src="/uploads/profile.png" 
+              src="/uploads/profile.jpeg" 
               alt="Dr. Marwah Zaid" 
               width={400} 
               height={400} 
@@ -202,7 +193,6 @@ export default async function Home() {
             {experiences.map((exp, idx) => {
               // Aonic gets a multi-photo slideshow
               const aonicPhotos = [
-                '/uploads/aonic-1.jpeg',
                 '/uploads/aonic-3.jpg',
                 '/uploads/aonic-4.png',
               ];
