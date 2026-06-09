@@ -32,41 +32,60 @@ export default async function Home() {
               I hold a First-Class Honours degree in Computer Science (CGPA 3.73) and have published multiple works in machine 
               learning and medical AI. I am particularly interested in translating advanced AI methods into real-world clinical applications.
             </p>
-            <div className="flex gap-4 items-center mt-6">
-              <a href="#about" className="btn btn-primary" style={{padding: '0.8rem 1.5rem'}}>Discover My Journey ↓</a>
-            </div>
             <div className="social-links mt-6">
+
+              {/* Email */}
+              <a href="mailto:marwahalhelali@gmail.com" className="social-pill" aria-label="Email" style={{'--pill-color': '#EA4335'}}>
+                <span className="social-pill-icon" style={{background: 'rgba(234,67,53,0.18)', color: '#EA4335'}}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </span>
+                <span className="social-pill-label">Email</span>
+              </a>
+
+              {/* LinkedIn */}
+              <a href="https://www.linkedin.com/in/marwah-al-helali-a3bb05243/" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="LinkedIn" style={{'--pill-color': '#0A66C2'}}>
+                <span className="social-pill-icon" style={{background: 'rgba(10,102,194,0.18)', color: '#0A66C2'}}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </span>
+                <span className="social-pill-label">LinkedIn</span>
+              </a>
+
               {/* Google Scholar */}
-              <a href="https://scholar.google.com/citations?user=hlIQz8IAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="Google Scholar">
-                <span className="social-pill-icon" style={{background: 'rgba(66,133,244,0.15)', color: '#4285F4'}}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+              <a href="https://scholar.google.com/citations?user=hlIQz8IAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="Google Scholar" style={{'--pill-color': '#4285F4'}}>
+                <span className="social-pill-icon" style={{background: 'rgba(66,133,244,0.18)', color: '#4285F4'}}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/>
+                  </svg>
                 </span>
                 <span className="social-pill-label">Google Scholar</span>
               </a>
 
               {/* ORCID */}
-              <a href="https://orcid.org/0009-0002-3079-0106" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="ORCID">
-                <span className="social-pill-icon" style={{background: 'rgba(166,206,57,0.15)', color: '#A6CE39'}}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.684 3.559h1.369v9.863H6.685V7.937zm3.56 0h3.69c3.521 0 5.36 2.544 5.36 4.928 0 2.434-1.839 4.935-5.36 4.935h-3.69V7.937zm1.369 1.247v7.369h2.227c2.546 0 4.003-1.731 4.003-3.683 0-1.952-1.457-3.686-4.003-3.686H11.614z"/></svg>
+              <a href="https://orcid.org/0009-0002-3079-0106" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="ORCID" style={{'--pill-color': '#A6CE39'}}>
+                <span className="social-pill-icon" style={{background: 'rgba(166,206,57,0.18)', color: '#A6CE39'}}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947-.947-.431-.947-.947.422-.947.947-.947zm-.684 3.559h1.369v9.863H6.685V7.937zm3.56 0h3.69c3.521 0 5.36 2.544 5.36 4.928 0 2.434-1.839 4.935-5.36 4.935h-3.69V7.937zm1.369 1.247v7.369h2.227c2.546 0 4.003-1.731 4.003-3.683 0-1.952-1.457-3.686-4.003-3.686H11.614z"/>
+                  </svg>
                 </span>
                 <span className="social-pill-label">ORCID</span>
               </a>
 
               {/* ResearchGate */}
-              <a href="https://www.researchgate.net/profile/Marwah-Al-Helali?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="ResearchGate">
-                <span className="social-pill-icon" style={{background: 'rgba(0,204,136,0.15)', color: '#00CC88'}}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.66 12.66 0 0 0-.208 1.284c-.022.27-.032.535-.032.799v3.948c0 .271.01.553.032.844.053.627.181 1.186.38 1.674.2.489.498.887.893 1.196.395.309.933.463 1.616.463.618 0 1.117-.161 1.497-.48.38-.32.636-.749.769-1.284.133-.536.2-1.134.2-1.797V8.76h-3.348v1.344h1.898v.686c0 .385-.034.704-.102.958-.068.254-.182.44-.342.559-.159.12-.376.179-.65.179-.285 0-.517-.07-.694-.209-.178-.138-.308-.345-.393-.621a4.273 4.273 0 0 1-.126-1.083V4.328c0-.416.044-.77.13-1.063.087-.293.225-.513.413-.66.19-.148.436-.222.74-.222.3 0 .543.073.728.219.184.147.317.367.398.66.08.293.12.647.12 1.063v.5h1.45V4.328c0-.752-.103-1.384-.308-1.9-.205-.514-.519-.903-.94-1.168C20.758.127 20.231 0 19.586 0zm-8.457.268H9.405L6.07 9.925 2.715.268H0l4.846 12.816-.062.162c-.174.459-.37.795-.587 1.008-.216.213-.5.32-.85.32-.159 0-.328-.02-.509-.06a3.595 3.595 0 0 1-.479-.155l-.457 1.403c.2.088.43.162.688.224.258.061.515.092.77.092.66 0 1.218-.148 1.672-.445.455-.297.834-.752 1.14-1.364.307-.611.598-1.39.873-2.334L11.13.268z"/></svg>
+              <a href="https://www.researchgate.net/profile/Marwah-Al-Helali?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="ResearchGate" style={{'--pill-color': '#00CCBB'}}>
+                <span className="social-pill-icon" style={{background: 'rgba(0,204,187,0.18)', color: '#00CCBB'}}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.073 16.27H8.445V7.732h2.482v8.537zm-1.241-9.701a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88zm10.314 9.701h-2.48v-4.155c0-.991-.018-2.267-1.382-2.267-1.383 0-1.595 1.08-1.595 2.195v4.227h-2.478V7.732h2.38v1.165h.033c.331-.628 1.14-1.29 2.347-1.29 2.51 0 2.975 1.653 2.975 3.803v4.86z"/>
+                  </svg>
                 </span>
                 <span className="social-pill-label">ResearchGate</span>
               </a>
 
-              {/* LinkedIn */}
-              <a href="https://www.linkedin.com/in/marwah-al-helali-a3bb05243/" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="LinkedIn">
-                <span className="social-pill-icon" style={{background: 'rgba(10,102,194,0.15)', color: '#0A66C2'}}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </span>
-                <span className="social-pill-label">LinkedIn</span>
-              </a>
             </div>
           </ScrollReveal>
           
@@ -158,29 +177,46 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* RECENT EXPERIENCE SECTION */}
-      <section className="section section-alt" style={{paddingTop: '6rem', paddingBottom: '6rem'}}>
+      {/* INDUSTRY EXPERIENCE SECTION */}
+      <section className="section section-alt" id="experience" style={{paddingTop: '6rem', paddingBottom: '6rem'}}>
         <div className="container">
-          <ScrollReveal delay={100} styleClass="flex justify-between items-end mb-4" style={{borderBottom: '1px solid var(--border)', paddingBottom: '1rem'}}>
+          <ScrollReveal delay={100} styleClass="flex justify-between items-end mb-4" style={{borderBottom: '1px solid var(--border)', paddingBottom: '1.5rem'}}>
             <div>
-              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: 'var(--primary)'}}>Recent Experience</h2>
-              <p className="text-secondary">Professional and research roles driving innovation in AI.</p>
+              <span style={{display: 'inline-block', background: 'rgba(30,58,138,0.08)', color: 'var(--primary)', fontWeight: 700, fontSize: '0.78rem', letterSpacing: '2px', textTransform: 'uppercase', padding: '0.3rem 0.9rem', borderRadius: '999px', marginBottom: '0.75rem'}}>Career</span>
+              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: 'var(--primary)'}}>Industry Experience</h2>
+              <p className="text-secondary">Professional roles where research meets real-world impact.</p>
             </div>
-            <Link href="/experience" className="btn btn-secondary" style={{marginBottom: '0.5rem'}}>View Timeline &rarr;</Link>
+            <Link href="/experience" className="btn btn-secondary" style={{marginBottom: '0.5rem'}}>Full Timeline &rarr;</Link>
           </ScrollReveal>
-          
-          <div className="grid-2 mt-4" style={{gap: '2rem'}}>
+
+          <div className="exp-cards mt-4">
             {experiences.map((exp, idx) => (
               <ScrollReveal delay={(idx + 1) * 150} key={exp.id}>
-                <div className="card" style={{padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%'}}>
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 style={{fontSize: '1.4rem', color: 'var(--primary)'}}>{exp.title}</h3>
-                    <span style={{background: 'rgba(30, 58, 138, 0.1)', color: 'var(--primary)', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600'}}>
-                      {exp.dateRange}
-                    </span>
+                <div className="exp-card">
+                  {/* Image panel */}
+                  <div className="exp-card-image">
+                    {exp.image
+                      ? <Image src={exp.image} alt={exp.organization} fill style={{objectFit: 'cover'}} />
+                      : <div className="exp-card-image-placeholder">
+                          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                        </div>
+                    }
+                    <div className="exp-card-image-overlay" />
+                    <span className="exp-card-badge">{exp.dateRange}</span>
                   </div>
-                  <div className="text-secondary mb-3 font-bold">{exp.organization}</div>
-                  {exp.description && <p style={{lineHeight: '1.6', flex: 1}}>{exp.description}</p>}
+
+                  {/* Content panel */}
+                  <div className="exp-card-body">
+                    <div className="exp-card-org">{exp.organization}</div>
+                    <h3 className="exp-card-title">{exp.title}</h3>
+                    {exp.description && (
+                      <p className="exp-card-desc">{exp.description}</p>
+                    )}
+                    <div className="exp-card-type">
+                      <span className="exp-type-dot" />
+                      {exp.type === 'research' ? 'Research' : exp.type === 'volunteer' ? 'Volunteer' : 'Industry'}
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}

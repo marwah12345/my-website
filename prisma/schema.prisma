@@ -56,6 +56,7 @@ model Experience {
   dateRange     String?
   description   String?
   type          String   @default("work") // 'work', 'volunteer', 'research'
+  image         String?
   createdAt     DateTime @default(now())
 }
 

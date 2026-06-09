@@ -28,6 +28,7 @@ export default async function AdminLayout({ children }) {
         <Link href="/admin/papers">Papers & Books</Link>
         <Link href="/admin/education">Education & Certs</Link>
         <Link href="/admin/projects">Projects</Link>
+        <Link href="/admin/experience">Experience</Link>
         <Link href="/admin/blog">Blog Posts</Link>
         <Link href="/admin/comments">Comments</Link>
         <Link href="/" style={{marginTop: '2rem', color: 'var(--accent)'}}>&larr; Back to Site</Link>
