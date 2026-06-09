@@ -205,7 +205,12 @@ export default async function Home() {
                       {isAonic ? (
                         <ExpSlideshow images={aonicPhotos} interval={3500} />
                       ) : exp.image ? (
-                        <ExpSlideshow images={[exp.image]} interval={9999999} />
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={exp.image}
+                          alt={exp.organization}
+                          style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}}
+                        />
                       ) : (
                         <div className="exp-card-image-placeholder">
                           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
