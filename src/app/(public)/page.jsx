@@ -233,136 +233,130 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* RECENT PUBLICATIONS SECTION */}
-      <section className="section" style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
-        <div className="container">
-          <ScrollReveal delay={100} styleClass="flex justify-between items-end mb-4" style={{borderBottom: '1px solid var(--border)', paddingBottom: '0.8rem', marginBottom: '1.5rem'}}>
-            <div>
-              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--primary)'}}>Latest Publications</h2>
-              <p className="text-secondary" style={{fontSize: '0.8rem'}}>Key academic contributions to peer-reviewed journals.</p>
-            </div>
-            <Link href="/papers" className="btn btn-secondary" style={{marginBottom: '0.5rem', fontSize: '0.75rem', padding: '0.45rem 0.9rem'}}>View All &rarr;</Link>
-          </ScrollReveal>
-          
-          <div className="grid-2 mt-4" style={{gap: '1.2rem'}}>
-            {papers.map((pub, idx) => (
-              <ScrollReveal delay={(idx + 1) * 150} key={pub.id}>
-                <div className="card" style={{padding: 0}}>
-                  <div style={{height: '140px', position: 'relative', overflow: 'hidden'}}>
-                    <Image src="/uploads/mri.png" alt="Publication cover" fill style={{objectFit: 'cover'}} />
-                    <div style={{position: 'absolute', inset: 0, background: 'rgba(15, 23, 42, 0.5)'}}></div>
-                    <div style={{position: 'absolute', bottom: '0.8rem', left: '1rem', right: '1rem'}}>
-                      <h3 style={{color: 'white', fontSize: '0.95rem', lineHeight: '1.3', textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>{pub.title}</h3>
-                    </div>
-                  </div>
-                  <div style={{padding: '1rem', flex: 1, display: 'flex', flexDirection: 'column'}}>
-                    <div className="text-secondary font-bold mb-2" style={{fontSize: '0.75rem'}}>
-                      {pub.venue} &bull; <span style={{color: 'var(--accent)'}}>{pub.date || pub.year}</span>
-                    </div>
-                    {pub.authors && <div style={{fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.4rem', fontStyle: 'italic'}}>{pub.authors}</div>}
-                    {pub.doi && <div style={{fontSize: '0.72rem', color: 'var(--text-secondary)'}}>DOI: <a href={pub.link || `#`} target="_blank" style={{color: 'var(--primary)'}}>{pub.doi}</a></div>}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* RECENT AWARDS SECTION */}
-      <section className="section section-alt" style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
-        <div className="container">
-          <ScrollReveal delay={100} styleClass="flex justify-between items-end mb-4" style={{borderBottom: '1px solid var(--border)', paddingBottom: '0.8rem', marginBottom: '1.5rem'}}>
-            <div>
-              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--primary)'}}>Honours & Awards</h2>
-              <p className="text-secondary" style={{fontSize: '0.8rem'}}>Recognition for academic excellence.</p>
-            </div>
-            <Link href="/certificates" className="btn btn-secondary" style={{marginBottom: '0.5rem', fontSize: '0.75rem', padding: '0.45rem 0.9rem'}}>View All &rarr;</Link>
-          </ScrollReveal>
-          
-          <div className="grid-2 mt-4" style={{gap: '1.2rem', maxWidth: '850px', margin: '0 auto'}}>
-            {awards.map((award, idx) => (
-              <ScrollReveal delay={(idx + 1) * 150} key={award.id}>
-                <div className="card flex items-center gap-4" style={{padding: '1rem'}}>
-                  <div style={{width: '45px', height: '45px', position: 'relative', borderRadius: '50%', overflow: 'hidden', flexShrink: 0}}>
-                     <Image src="/uploads/award.png" alt="Award medal placeholder" fill style={{objectFit: 'cover'}} />
-                  </div>
-                  <div>
-                    <h4 style={{fontSize: '0.95rem', marginBottom: '0.15rem', color: 'var(--primary)', fontWeight: 600}}>{award.title}</h4>
-                    <p className="text-secondary" style={{fontSize: '0.78rem'}}>{award.issuer && `${award.issuer} • `}{award.year}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* RECENT PROJECTS / BOOKS SECTION */}
-      <section className="section" style={{paddingTop: '2rem', paddingBottom: '3rem'}}>
+      {/* COMBINED HIGHLIGHTS SECTION - All Latest Content */}
+      <section className="section" style={{paddingTop: '2.5rem', paddingBottom: '3rem'}}>
         <div className="container">
           <ScrollReveal delay={100} styleClass="text-center mb-4">
-            <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--primary)'}}>Projects & Literature</h2>
-            <p className="text-secondary" style={{maxWidth: '550px', margin: '0 auto 1.5rem', fontSize: '0.8rem'}}>
-              Technical research tools, applications, and authorship.
+            <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--primary)'}}>Latest Highlights</h2>
+            <p className="text-secondary" style={{maxWidth: '600px', margin: '0 auto 2rem', fontSize: '0.85rem'}}>
+              Recent publications, awards, projects, and literature.
             </p>
           </ScrollReveal>
-          
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', maxWidth: '1000px', margin: '0 auto'}}>
-            {/* Project Column */}
+
+          {/* Publications */}
+          <div style={{marginBottom: '2.5rem'}}>
+            <div className="flex justify-between items-center mb-3" style={{borderBottom: '1px solid var(--border)', paddingBottom: '0.8rem'}}>
+              <h3 style={{fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)'}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display: 'inline', marginRight: '0.5rem', verticalAlign: 'text-bottom'}}>
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                </svg>
+                Publications
+              </h3>
+              <Link href="/papers" className="text-primary" style={{fontSize: '0.8rem', fontWeight: 600}}>View All ({papers.length > 2 ? 'More' : papers.length}) →</Link>
+            </div>
+            <div className="grid-2" style={{gap: '1rem'}}>
+              {papers.map((pub, idx) => (
+                <ScrollReveal delay={(idx + 1) * 100} key={pub.id}>
+                  <div className="card" style={{padding: 0}}>
+                    <div style={{height: '120px', position: 'relative', overflow: 'hidden'}}>
+                      <Image src="/uploads/mri.png" alt="Publication cover" fill style={{objectFit: 'cover'}} />
+                      <div style={{position: 'absolute', inset: 0, background: 'rgba(15, 23, 42, 0.5)'}}></div>
+                      <div style={{position: 'absolute', bottom: '0.6rem', left: '0.8rem', right: '0.8rem'}}>
+                        <h4 style={{color: 'white', fontSize: '0.85rem', lineHeight: '1.3', textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>{pub.title}</h4>
+                      </div>
+                    </div>
+                    <div style={{padding: '0.9rem'}}>
+                      <div className="text-secondary font-bold" style={{fontSize: '0.7rem'}}>
+                        {pub.venue} • <span style={{color: 'var(--accent)'}}>{pub.date || pub.year}</span>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+
+          {/* Awards */}
+          <div style={{marginBottom: '2.5rem'}}>
+            <div className="flex justify-between items-center mb-3" style={{borderBottom: '1px solid var(--border)', paddingBottom: '0.8rem'}}>
+              <h3 style={{fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)'}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display: 'inline', marginRight: '0.5rem', verticalAlign: 'text-bottom'}}>
+                  <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+                Awards & Honors
+              </h3>
+              <Link href="/certificates" className="text-primary" style={{fontSize: '0.8rem', fontWeight: 600}}>View All →</Link>
+            </div>
+            <div className="grid-2" style={{gap: '1rem'}}>
+              {awards.map((award, idx) => (
+                <ScrollReveal delay={(idx + 1) * 100} key={award.id}>
+                  <div className="card flex items-center gap-3" style={{padding: '0.9rem'}}>
+                    <div style={{width: '40px', height: '40px', position: 'relative', borderRadius: '50%', overflow: 'hidden', flexShrink: 0}}>
+                      <Image src="/uploads/award.png" alt="Award" fill style={{objectFit: 'cover'}} />
+                    </div>
+                    <div>
+                      <h4 style={{fontSize: '0.88rem', marginBottom: '0.1rem', color: 'var(--primary)', fontWeight: 600, lineHeight: '1.3'}}>{award.title}</h4>
+                      <p className="text-secondary" style={{fontSize: '0.72rem'}}>{award.issuer && `${award.issuer} • `}{award.year}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+
+          {/* Projects & Books Combined */}
+          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem'}}>
+            
+            {/* Projects */}
             <div>
-              <div className="flex justify-between items-center mb-3">
-                <h3 style={{fontSize: '1.15rem', fontWeight: 600}}>Latest Projects</h3>
-                <Link href="/projects" className="text-primary text-sm font-bold" style={{fontSize: '0.75rem'}}>View All &rarr;</Link>
+              <div className="flex justify-between items-center mb-3" style={{borderBottom: '1px solid var(--border)', paddingBottom: '0.8rem'}}>
+                <h3 style={{fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)'}}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display: 'inline', marginRight: '0.5rem', verticalAlign: 'text-bottom'}}>
+                    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                  Projects
+                </h3>
+                <Link href="/projects" className="text-primary" style={{fontSize: '0.8rem', fontWeight: 600}}>View All →</Link>
               </div>
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {projects.map((proj, idx) => (
-                  <ScrollReveal delay={(idx + 1) * 150} key={proj.id}>
-                     <div className="card" style={{padding: 0, overflow: 'hidden'}}>
-                         <div style={{height: '100px', position: 'relative', background: 'linear-gradient(135deg,#1e3a8a,#0f172a)'}}>
-                             {proj.image
-                               ? <Image src={proj.image} alt={proj.title} fill style={{objectFit: 'cover'}} />
-                               : <Image src="/uploads/code.png" alt="Project placeholder" fill style={{objectFit: 'cover'}} />
-                             }
-                             <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent)'}}></div>
-                         </div>
-                         <div style={{padding: '1rem'}}>
-                            <h4 style={{fontSize: '0.95rem', color: 'var(--primary)', fontWeight: 600}}>{proj.title}</h4>
-                            {proj.description && <p className="mt-2 text-secondary" style={{fontSize: '0.8rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', lineHeight: '1.5'}}>{proj.description}</p>}
-                            <div style={{display: 'flex', gap: '0.4rem', marginTop: '0.8rem', flexWrap: 'wrap'}}>
-                              {proj.githubLink && (
-                                <a href={proj.githubLink} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',gap:'0.3rem',background:'#0f172a',color:'white',padding:'0.3rem 0.65rem',borderRadius:'5px',fontSize:'0.7rem',fontWeight:600,textDecoration:'none'}}>
-                                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                                  GitHub
-                                </a>
-                              )}
-                              {proj.youtubeLink && (
-                                <a href={proj.youtubeLink} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',gap:'0.3rem',background:'#ff0000',color:'white',padding:'0.3rem 0.65rem',borderRadius:'5px',fontSize:'0.7rem',fontWeight:600,textDecoration:'none'}}>
-                                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                                  YouTube
-                                </a>
-                              )}
-                            </div>
-                         </div>
-                     </div>
+                  <ScrollReveal delay={(idx + 1) * 100} key={proj.id}>
+                    <div className="card" style={{padding: 0, overflow: 'hidden'}}>
+                      <div style={{height: '90px', position: 'relative', background: 'linear-gradient(135deg,#1e3a8a,#0f172a)'}}>
+                        {proj.image
+                          ? <Image src={proj.image} alt={proj.title} fill style={{objectFit: 'cover'}} />
+                          : <Image src="/uploads/code.png" alt="Project" fill style={{objectFit: 'cover'}} />
+                        }
+                        <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent)'}}></div>
+                      </div>
+                      <div style={{padding: '0.9rem'}}>
+                        <h4 style={{fontSize: '0.88rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.3rem'}}>{proj.title}</h4>
+                        {proj.description && <p className="text-secondary" style={{fontSize: '0.75rem', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>{proj.description}</p>}
+                      </div>
+                    </div>
                   </ScrollReveal>
                 ))}
               </div>
             </div>
 
-            {/* Books Column */}
+            {/* Books */}
             <div>
-              <div className="flex justify-between items-center mb-3">
-                <h3 style={{fontSize: '1.15rem', fontWeight: 600}}>Authored Text</h3>
-                <Link href="/books" className="text-primary text-sm font-bold" style={{fontSize: '0.75rem'}}>View All &rarr;</Link>
+              <div className="flex justify-between items-center mb-3" style={{borderBottom: '1px solid var(--border)', paddingBottom: '0.8rem'}}>
+                <h3 style={{fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)'}}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display: 'inline', marginRight: '0.5rem', verticalAlign: 'text-bottom'}}>
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                  </svg>
+                  Books
+                </h3>
+                <Link href="/books" className="text-primary" style={{fontSize: '0.8rem', fontWeight: 600}}>View All →</Link>
               </div>
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {books.map((book, idx) => (
-                  <ScrollReveal delay={(idx + 1) * 150} key={book.id}>
-                    <div className="card" style={{padding: '1rem', borderLeft: '3px solid var(--accent)'}}>
-                      <h4 style={{fontSize: '0.95rem', color: 'var(--primary)', fontWeight: 600}}>{book.title}</h4>
-                      <p className="text-secondary font-bold mt-1" style={{fontSize: '0.75rem'}}>{book.publisher && `${book.publisher} • `}{book.year}</p>
-                      {book.description && <p className="mt-2 text-secondary" style={{fontSize: '0.8rem', lineHeight: '1.5'}}>{book.description}</p>}
+                  <ScrollReveal delay={(idx + 1) * 100} key={book.id}>
+                    <div className="card" style={{padding: '0.9rem', borderLeft: '3px solid var(--accent)'}}>
+                      <h4 style={{fontSize: '0.88rem', color: 'var(--primary)', fontWeight: 600, lineHeight: '1.3', marginBottom: '0.2rem'}}>{book.title}</h4>
+                      <p className="text-secondary font-bold" style={{fontSize: '0.72rem'}}>{book.publisher && `${book.publisher} • `}{book.year}</p>
+                      {book.description && <p className="text-secondary" style={{fontSize: '0.75rem', lineHeight: '1.4', marginTop: '0.4rem'}}>{book.description}</p>}
                     </div>
                   </ScrollReveal>
                 ))}
