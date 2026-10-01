@@ -95,13 +95,13 @@ export default async function Home() {
       </section>
 
       {/* FULL STATIC EDUCATION SECTION AS VERTICAL TIMELINE */}
-      <section className="section" id="about" style={{paddingTop: '6rem', paddingBottom: '6rem'}}>
+      <section className="section" id="about" style={{paddingTop: '3rem', paddingBottom: '3rem'}}>
         <div className="container">
           <ScrollReveal delay={100} styleClass="text-center mb-4">
-            <h2 className="section-title mb-k" style={{display: 'inline-block'}}>Education</h2>
+            <h2 className="section-title mb-k" style={{display: 'inline-block', fontSize: '1.8rem'}}>Education</h2>
           </ScrollReveal>
           
-          <div className="mt-4" style={{maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem'}}>
+          <div className="mt-4" style={{maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2.5rem'}}>
             {education.map((ed, index) => {
               // Determine Photos based on degree matching
               let photos = [];
@@ -115,8 +115,8 @@ export default async function Home() {
                 <ScrollReveal delay={200} key={ed.id}>
                   <div style={{ 
                     position: 'relative', 
-                    paddingLeft: '3rem', 
-                    paddingBottom: index === education.length - 1 ? '0' : '4rem',
+                    paddingLeft: '2.5rem', 
+                    paddingBottom: index === education.length - 1 ? '0' : '2.5rem',
                     borderLeft: index === education.length - 1 ? '3px solid transparent' : '3px solid var(--border)'
                   }}>
                     {/* Timeline Node */}
@@ -131,21 +131,21 @@ export default async function Home() {
                       boxShadow: '0 0 0 4px white, 0 0 0 6px var(--border)'
                     }}></div>
 
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'flex-start' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'flex-start' }}>
                       {/* Academic Content */}
                       <div style={{ flex: '1', minWidth: '280px' }}>
-                        <div style={{color: 'var(--accent)', fontWeight: 'bold', marginBottom: '0.4rem', letterSpacing: '1px', fontSize: '0.95rem'}}>{ed.yearStart} - {ed.yearEnd || 'Present'}</div>
-                        <h3 className="mb-2" style={{fontSize: '1.4rem', color: 'var(--text-primary)', lineHeight: 1.3}}>{ed.degree}</h3>
-                        <div style={{fontFamily: 'var(--font-serif)', color: 'var(--text-secondary)', fontSize: '1.1rem'}} className="mb-3">
+                        <div style={{color: 'var(--accent)', fontWeight: 'bold', marginBottom: '0.3rem', letterSpacing: '1px', fontSize: '0.85rem'}}>{ed.yearStart} - {ed.yearEnd || 'Present'}</div>
+                        <h3 className="mb-2" style={{fontSize: '1.2rem', color: 'var(--text-primary)', lineHeight: 1.3}}>{ed.degree}</h3>
+                        <div style={{fontFamily: 'var(--font-serif)', color: 'var(--text-secondary)', fontSize: '1rem'}} className="mb-3">
                           {ed.institution}
                         </div>
-                        <p style={{lineHeight: '1.7', fontSize: '1rem', color: 'var(--text-secondary)'}}>{ed.description}</p>
+                        <p style={{lineHeight: '1.6', fontSize: '0.95rem', color: 'var(--text-secondary)'}}>{ed.description}</p>
                       </div>
 
                       {/* Compact Image Slideshow Thumbnail */}
                       <div style={{
-                        flex: '0 0 320px', 
-                        height: '240px', 
+                        flex: '0 0 280px', 
+                        height: '200px', 
                         position: 'relative', 
                         borderRadius: 'var(--radius-lg)', 
                         overflow: 'hidden', 
@@ -234,34 +234,34 @@ export default async function Home() {
       </section>
 
       {/* RECENT PUBLICATIONS SECTION */}
-      <section className="section" style={{paddingTop: '6rem', paddingBottom: '6rem'}}>
+      <section className="section" style={{paddingTop: '3rem', paddingBottom: '3rem'}}>
         <div className="container">
           <ScrollReveal delay={100} styleClass="flex justify-between items-end mb-4" style={{borderBottom: '1px solid var(--border)', paddingBottom: '1rem'}}>
             <div>
-              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: 'var(--primary)'}}>Latest Publications</h2>
-              <p className="text-secondary">Key academic contributions to peer-reviewed journals and conferences.</p>
+              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--primary)'}}>Latest Publications</h2>
+              <p className="text-secondary" style={{fontSize: '0.9rem'}}>Key academic contributions to peer-reviewed journals and conferences.</p>
             </div>
-            <Link href="/papers" className="btn btn-secondary" style={{marginBottom: '0.5rem'}}>Read All Papers &rarr;</Link>
+            <Link href="/papers" className="btn btn-secondary" style={{marginBottom: '0.5rem', fontSize: '0.85rem', padding: '0.5rem 1rem'}}>Read All Papers &rarr;</Link>
           </ScrollReveal>
           
-          <div className="grid-2 mt-4" style={{gap: '2rem'}}>
+          <div className="grid-2 mt-4" style={{gap: '1.5rem'}}>
             {papers.map((pub, idx) => (
               <ScrollReveal delay={(idx + 1) * 150} key={pub.id}>
                 <div className="card" style={{padding: 0}}>
-                  <div style={{height: '250px', position: 'relative', overflow: 'hidden'}}>
+                  <div style={{height: '180px', position: 'relative', overflow: 'hidden'}}>
                     {/* Applying the generated placeholder image and a glass overlay */}
                     <Image src="/uploads/mri.png" alt="Publication cover" fill style={{objectFit: 'cover'}} />
                     <div style={{position: 'absolute', inset: 0, background: 'rgba(15, 23, 42, 0.6)'}}></div>
                     <div style={{position: 'absolute', bottom: '1rem', left: '1.5rem', right: '1.5rem'}}>
-                      <h3 style={{color: 'white', fontSize: '1.3rem', lineHeight: '1.4', textShadow: '0 2px 5px rgba(0,0,0,0.5)'}}>{pub.title}</h3>
+                      <h3 style={{color: 'white', fontSize: '1.1rem', lineHeight: '1.4', textShadow: '0 2px 5px rgba(0,0,0,0.5)'}}>{pub.title}</h3>
                     </div>
                   </div>
-                  <div style={{padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column'}}>
-                    <div className="text-secondary font-bold mb-2">
+                  <div style={{padding: '1.2rem', flex: 1, display: 'flex', flexDirection: 'column'}}>
+                    <div className="text-secondary font-bold mb-2" style={{fontSize: '0.85rem'}}>
                       {pub.venue} &bull; <span style={{color: 'var(--accent)'}}>{pub.date || pub.year}</span>
                     </div>
-                    {pub.authors && <div style={{fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontStyle: 'italic'}}>{pub.authors}</div>}
-                    {pub.doi && <div style={{fontSize: '0.85rem', color: 'var(--text-secondary)'}}>DOI: <a href={pub.link || `#`} target="_blank" style={{color: 'var(--primary)'}}>{pub.doi}</a></div>}
+                    {pub.authors && <div style={{fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', fontStyle: 'italic'}}>{pub.authors}</div>}
+                    {pub.doi && <div style={{fontSize: '0.8rem', color: 'var(--text-secondary)'}}>DOI: <a href={pub.link || `#`} target="_blank" style={{color: 'var(--primary)'}}>{pub.doi}</a></div>}
                   </div>
                 </div>
               </ScrollReveal>
@@ -271,26 +271,26 @@ export default async function Home() {
       </section>
 
       {/* RECENT AWARDS SECTION */}
-      <section className="section section-alt" style={{paddingTop: '6rem', paddingBottom: '6rem'}}>
+      <section className="section section-alt" style={{paddingTop: '3rem', paddingBottom: '3rem'}}>
         <div className="container">
           <ScrollReveal delay={100} styleClass="flex justify-between items-end mb-4" style={{borderBottom: '1px solid var(--border)', paddingBottom: '1rem'}}>
             <div>
-              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: 'var(--primary)'}}>Honours & Awards</h2>
-              <p className="text-secondary">Recognition for academic and research excellence.</p>
+              <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--primary)'}}>Honours & Awards</h2>
+              <p className="text-secondary" style={{fontSize: '0.9rem'}}>Recognition for academic and research excellence.</p>
             </div>
-            <Link href="/certificates" className="btn btn-secondary" style={{marginBottom: '0.5rem'}}>View Certificates &rarr;</Link>
+            <Link href="/certificates" className="btn btn-secondary" style={{marginBottom: '0.5rem', fontSize: '0.85rem', padding: '0.5rem 1rem'}}>View Certificates &rarr;</Link>
           </ScrollReveal>
           
-          <div className="grid-2 mt-4" style={{gap: '2rem', maxWidth: '900px', margin: '0 auto'}}>
+          <div className="grid-2 mt-4" style={{gap: '1.5rem', maxWidth: '900px', margin: '0 auto'}}>
             {awards.map((award, idx) => (
               <ScrollReveal delay={(idx + 1) * 150} key={award.id}>
-                <div className="card flex items-center gap-4" style={{padding: '1.5rem'}}>
-                  <div style={{width: '60px', height: '60px', position: 'relative', borderRadius: '50%', overflow: 'hidden', flexShrink: 0}}>
+                <div className="card flex items-center gap-4" style={{padding: '1.2rem'}}>
+                  <div style={{width: '50px', height: '50px', position: 'relative', borderRadius: '50%', overflow: 'hidden', flexShrink: 0}}>
                      <Image src="/uploads/award.png" alt="Award medal placeholder" fill style={{objectFit: 'cover'}} />
                   </div>
                   <div>
-                    <h4 style={{fontSize: '1.2rem', marginBottom: '0.2rem', color: 'var(--primary)'}}>{award.title}</h4>
-                    <p className="text-secondary" style={{fontSize: '0.95rem'}}>{award.issuer && `${award.issuer} • `}{award.year}</p>
+                    <h4 style={{fontSize: '1.05rem', marginBottom: '0.2rem', color: 'var(--primary)'}}>{award.title}</h4>
+                    <p className="text-secondary" style={{fontSize: '0.85rem'}}>{award.issuer && `${award.issuer} • `}{award.year}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -300,46 +300,46 @@ export default async function Home() {
       </section>
 
       {/* RECENT PROJECTS / BOOKS SECTION */}
-      <section className="section" style={{paddingTop: '6rem', paddingBottom: '8rem'}}>
+      <section className="section" style={{paddingTop: '3rem', paddingBottom: '4rem'}}>
         <div className="container">
           <ScrollReveal delay={100} styleClass="text-center mb-4">
-            <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: 'var(--primary)'}}>Projects & Literature</h2>
-            <p className="text-secondary" style={{maxWidth: '600px', margin: '0 auto 3rem'}}>
+            <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--primary)'}}>Projects & Literature</h2>
+            <p className="text-secondary" style={{maxWidth: '600px', margin: '0 auto 2rem', fontSize: '0.9rem'}}>
               A glance at my technical research tools, application development, and authorship.
             </p>
           </ScrollReveal>
           
-          <div className="grid-2 mt-4" style={{gap: '3rem'}}>
+          <div className="grid-2 mt-4" style={{gap: '2rem'}}>
             {/* Project Column */}
             <div>
               <div className="flex justify-between items-center mb-3">
-                <h3 style={{fontSize: '1.5rem'}}>Latest Projects</h3>
-                <Link href="/projects" className="text-primary text-sm font-bold">View All &rarr;</Link>
+                <h3 style={{fontSize: '1.3rem'}}>Latest Projects</h3>
+                <Link href="/projects" className="text-primary text-sm font-bold" style={{fontSize: '0.85rem'}}>View All &rarr;</Link>
               </div>
               <div className="grid-1 gap-4">
                 {projects.map((proj, idx) => (
                   <ScrollReveal delay={(idx + 1) * 150} key={proj.id}>
                      <div className="card" style={{padding: 0, overflow: 'hidden'}}>
-                         <div style={{height: '150px', position: 'relative', background: 'linear-gradient(135deg,#1e3a8a,#0f172a)'}}>
+                         <div style={{height: '120px', position: 'relative', background: 'linear-gradient(135deg,#1e3a8a,#0f172a)'}}>
                              {proj.image
                                ? <Image src={proj.image} alt={proj.title} fill style={{objectFit: 'cover'}} />
                                : <Image src="/uploads/code.png" alt="Project placeholder" fill style={{objectFit: 'cover'}} />
                              }
                              <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent)'}}></div>
                          </div>
-                         <div style={{padding: '1.5rem'}}>
-                            <h4 style={{fontSize: '1.2rem', color: 'var(--primary)'}}>{proj.title}</h4>
-                            {proj.description && <p className="mt-2 text-secondary" style={{fontSize: '0.95rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>{proj.description}</p>}
+                         <div style={{padding: '1.2rem'}}>
+                            <h4 style={{fontSize: '1.05rem', color: 'var(--primary)'}}>{proj.title}</h4>
+                            {proj.description && <p className="mt-2 text-secondary" style={{fontSize: '0.88rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>{proj.description}</p>}
                             <div style={{display: 'flex', gap: '0.5rem', marginTop: '1rem', flexWrap: 'wrap'}}>
                               {proj.githubLink && (
-                                <a href={proj.githubLink} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',gap:'0.35rem',background:'#0f172a',color:'white',padding:'0.4rem 0.85rem',borderRadius:'6px',fontSize:'0.8rem',fontWeight:600,textDecoration:'none'}}>
-                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                                <a href={proj.githubLink} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',gap:'0.35rem',background:'#0f172a',color:'white',padding:'0.35rem 0.75rem',borderRadius:'6px',fontSize:'0.75rem',fontWeight:600,textDecoration:'none'}}>
+                                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                                   GitHub
                                 </a>
                               )}
                               {proj.youtubeLink && (
-                                <a href={proj.youtubeLink} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',gap:'0.35rem',background:'#ff0000',color:'white',padding:'0.4rem 0.85rem',borderRadius:'6px',fontSize:'0.8rem',fontWeight:600,textDecoration:'none'}}>
-                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                <a href={proj.youtubeLink} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',gap:'0.35rem',background:'#ff0000',color:'white',padding:'0.35rem 0.75rem',borderRadius:'6px',fontSize:'0.75rem',fontWeight:600,textDecoration:'none'}}>
+                                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                                   YouTube
                                 </a>
                               )}
@@ -354,16 +354,16 @@ export default async function Home() {
             {/* Books Column */}
             <div>
               <div className="flex justify-between items-center mb-3">
-                <h3 style={{fontSize: '1.5rem'}}>Authored Text</h3>
-                <Link href="/books" className="text-primary text-sm font-bold">View All &rarr;</Link>
+                <h3 style={{fontSize: '1.3rem'}}>Authored Text</h3>
+                <Link href="/books" className="text-primary text-sm font-bold" style={{fontSize: '0.85rem'}}>View All &rarr;</Link>
               </div>
               <div className="grid-1 gap-4">
                 {books.map((book, idx) => (
                   <ScrollReveal delay={(idx + 1) * 150} key={book.id}>
-                    <div className="card" style={{padding: '1.5rem', borderLeft: '4px solid var(--accent)'}}>
-                      <h4 style={{fontSize: '1.2rem', color: 'var(--primary)'}}>{book.title}</h4>
-                      <p className="text-secondary font-bold mt-1">{book.publisher && `${book.publisher} • `}{book.year}</p>
-                      {book.description && <p className="mt-2 text-secondary" style={{fontSize: '0.95rem'}}>{book.description}</p>}
+                    <div className="card" style={{padding: '1.2rem', borderLeft: '4px solid var(--accent)'}}>
+                      <h4 style={{fontSize: '1.05rem', color: 'var(--primary)'}}>{book.title}</h4>
+                      <p className="text-secondary font-bold mt-1" style={{fontSize: '0.85rem'}}>{book.publisher && `${book.publisher} • `}{book.year}</p>
+                      {book.description && <p className="mt-2 text-secondary" style={{fontSize: '0.88rem'}}>{book.description}</p>}
                     </div>
                   </ScrollReveal>
                 ))}
