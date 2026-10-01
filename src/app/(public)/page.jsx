@@ -239,7 +239,7 @@ export default async function Home() {
           </ScrollReveal>
 
           {/* Industry Experience */}
-          <div style={{marginBottom: '2.5rem'}}>
+          <div style={{marginBottom: '2.5rem', background: 'linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%)', padding: '2rem', borderRadius: '12px', border: '1px solid #cbd5e1'}}>
             <ScrollReveal delay={150}>
               <div style={{
                 display: 'flex', 
@@ -276,22 +276,17 @@ export default async function Home() {
                     display: 'flex',
                     flexDirection: 'column'
                   }}>
-                    <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '0.75rem'}}>
-                      <h4 style={{fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
-                      <span style={{
-                        fontSize: 'clamp(0.7rem, 2vw, 0.75rem)', 
-                        fontWeight: 600, 
-                        color: 'white',
-                        background: 'var(--accent)',
-                        padding: '0.25rem 0.75rem',
-                        borderRadius: '20px',
-                        alignSelf: 'flex-start',
-                        boxShadow: '0 2px 6px rgba(245,158,11,0.25)'
-                      }}>{exp.dateRange}</span>
-                    </div>
+                    <h4 style={{fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0, marginBottom: '0.75rem'}}>{exp.title}</h4>
                     <div style={{fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem'}}>
                       {exp.organization}
                     </div>
+                    <span style={{
+                      fontSize: '0.75rem', 
+                      fontWeight: 500, 
+                      color: '#64748b',
+                      marginBottom: '0.75rem',
+                      display: 'block'
+                    }}>{exp.dateRange}</span>
                     {exp.description && (
                       <p style={{fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', color: 'var(--text-secondary)', lineHeight: '1.7', margin: 0, flex: 1}}>
                         {exp.description}
@@ -305,7 +300,7 @@ export default async function Home() {
 
           {/* Academic Experience - NO DATA TO SHOW */}
           {academicExperiences.length > 0 && (
-          <div style={{marginBottom: '2.5rem'}}>
+          <div style={{marginBottom: '2.5rem', background: 'linear-gradient(135deg, #fef3c7 0%, #fef9e7 100%)', padding: '2rem', borderRadius: '12px', border: '1px solid #fde68a'}}>
             <ScrollReveal delay={150}>
               <div style={{
                 display: 'flex', 
@@ -342,22 +337,17 @@ export default async function Home() {
                     display: 'flex',
                     flexDirection: 'column'
                   }}>
-                    <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '0.75rem'}}>
-                      <h4 style={{fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
-                      <span style={{
-                        fontSize: 'clamp(0.7rem, 2vw, 0.75rem)', 
-                        fontWeight: 600, 
-                        color: 'white',
-                        background: 'var(--accent)',
-                        padding: '0.25rem 0.75rem',
-                        borderRadius: '20px',
-                        alignSelf: 'flex-start',
-                        boxShadow: '0 2px 6px rgba(245,158,11,0.25)'
-                      }}>{exp.dateRange}</span>
-                    </div>
+                    <h4 style={{fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0, marginBottom: '0.75rem'}}>{exp.title}</h4>
                     <div style={{fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem'}}>
                       {exp.organization}
                     </div>
+                    <span style={{
+                      fontSize: '0.75rem', 
+                      fontWeight: 500, 
+                      color: '#64748b',
+                      marginBottom: '0.75rem',
+                      display: 'block'
+                    }}>{exp.dateRange}</span>
                     {exp.description && (
                       <p style={{fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', color: 'var(--text-secondary)', lineHeight: '1.7', margin: 0, flex: 1}}>
                         {exp.description}
