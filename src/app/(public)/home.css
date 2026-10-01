@@ -168,8 +168,8 @@
   }
   
   .hero-image {
-    box-shadow: 0 20px 30px -10px rgb(0 0 0 / 0.4), 0 0 0 6px rgba(255,255,255,0.1);
     border: 3px solid var(--accent);
+    box-shadow: 0 15px 30px -8px rgb(0 0 0 / 0.4), 0 0 0 5px rgba(255,255,255,0.1);
   }
   
   .social-links {
@@ -189,8 +189,7 @@
 
 @media (max-width: 600px) {
   .hero {
-    padding: 2rem 0 2rem;
-    gap: 1rem;
+    padding: 2.5rem 0 2rem;
   }
   
   .hero-title {
@@ -207,22 +206,8 @@
   }
   
   .hero-image {
-    box-shadow: 0 15px 25px -8px rgb(0 0 0 / 0.35), 0 0 0 5px rgba(255,255,255,0.1);
     border: 2px solid var(--accent);
-  }
-  
-  .social-links {
-    gap: 0.5rem;
-  }
-  
-  .social-pill {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.75rem 0.3rem 0.3rem;
-  }
-  
-  .social-pill-icon {
-    width: 28px;
-    height: 28px;
+    box-shadow: 0 10px 25px -6px rgb(0 0 0 / 0.35), 0 0 0 4px rgba(255,255,255,0.08);
   }
   
   .section {
@@ -251,7 +236,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 1.5rem 0 1.5rem;
+    padding: 2rem 0 1.5rem;
   }
   
   .hero-title {
@@ -267,18 +252,18 @@
     width: 140px;
   }
   
-  .social-links {
-    gap: 0.4rem;
+  .hero-image {
+    border: 2px solid var(--accent);
   }
   
   .social-pill {
-    font-size: 0.65rem;
-    padding: 0.25rem 0.65rem 0.25rem 0.25rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem 0.3rem 0.3rem;
   }
   
   .social-pill-icon {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
 }
 
