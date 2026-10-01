@@ -6,7 +6,7 @@ import "./projects.css";
 
 export const metadata = {
   title: "Projects | Dr. Marwah Zaid",
-  description: "A showcase of AI, medical imaging, and software development projects by Dr. Marwah Zaid.",
+  description: "A showcase of AI, deep learning, and software development projects by Dr. Marwah Zaid.",
 };
 
 export default async function ProjectsPage() {
@@ -22,7 +22,7 @@ export default async function ProjectsPage() {
               <div className="accent-bar"></div>
               <h1 className="projects-hero-title">Projects</h1>
               <p className="projects-hero-subtitle">
-                A comprehensive showcase of my AI research tools, medical imaging systems,
+                A comprehensive showcase of my AI research tools, deep learning systems,
                 and software development work — from prototype to deployment.
               </p>
             </div>

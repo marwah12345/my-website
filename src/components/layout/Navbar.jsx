@@ -2,37 +2,54 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import "./navbar.css";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="navbar-header">
       <div className="container flex items-center justify-between navbar-container">
-        <Link href="/" className="logo">
+        <Link href="/" className="logo" onClick={closeMenu}>
           Dr. Marwah
         </Link>
-        <nav className="nav-links">
-          <Link href="/" className={pathname === "/" ? "active" : ""}>
+        
+        {/* Hamburger Button */}
+        <button 
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          <Link href="/" className={pathname === "/" ? "active" : ""} onClick={closeMenu}>
             Home
           </Link>
-          <Link href="/papers" className={pathname.startsWith("/papers") ? "active" : ""}>
+          <Link href="/papers" className={pathname.startsWith("/papers") ? "active" : ""} onClick={closeMenu}>
             Papers
           </Link>
-          <Link href="/books" className={pathname.startsWith("/books") ? "active" : ""}>
+          <Link href="/books" className={pathname.startsWith("/books") ? "active" : ""} onClick={closeMenu}>
             Books
           </Link>
-          <Link href="/projects" className={pathname.startsWith("/projects") ? "active" : ""}>
+          <Link href="/projects" className={pathname.startsWith("/projects") ? "active" : ""} onClick={closeMenu}>
             Projects
           </Link>
-          <Link href="/experience" className={pathname.startsWith("/experience") ? "active" : ""}>
+          <Link href="/experience" className={pathname.startsWith("/experience") ? "active" : ""} onClick={closeMenu}>
             Experience
           </Link>
-          <Link href="/certificates" className={pathname.startsWith("/certificates") ? "active" : ""}>
+          <Link href="/certificates" className={pathname.startsWith("/certificates") ? "active" : ""} onClick={closeMenu}>
             Certificates
           </Link>
-          <Link href="/blog" className={pathname.startsWith("/blog") ? "active" : ""}>
+          <Link href="/blog" className={pathname.startsWith("/blog") ? "active" : ""} onClick={closeMenu}>
             Blog
           </Link>
         </nav>

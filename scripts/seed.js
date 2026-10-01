@@ -2,6 +2,13 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
+  // Clear existing data
+  await prisma.book.deleteMany({});
+  await prisma.award.deleteMany({});
+  await prisma.experience.deleteMany({});
+  await prisma.paper.deleteMany({});
+  await prisma.education.deleteMany({});
+
   await prisma.education.createMany({
     data: [
       {
@@ -24,39 +31,30 @@ async function main() {
   await prisma.paper.createMany({
     data: [
       {
-        title: 'Implementation of Lightweight Machine Learning Models for Real-time Text Classification on Resource Constrained Devices',
-        venue: 'Journal of Informatics and Web Engineering (JIWE)',
-        year: 2025
-      },
-      {
-        title: 'Constructive AI for Educational Content Moderation',
-        venue: 'Journal of Informatics and Web Engineering (JIWE)',
-        year: 2025
-      },
-      {
-        title: 'Harris’ Hawks Optimization for Enhanced Clustering in Medical Diagnosis',
-        venue: 'ICBMC',
-        year: 2025
-      },
-      {
         title: 'Deep Architectural Classification for Heart Disease Prediction',
-        venue: 'ICETI',
-        year: 2025
+        venue: 'Information Systems Engineering and Management, Springer',
+        year: 2026
       },
       {
-        title: 'An Adaptive Model for Unmasking Zero-Day Threats using Federated Learning',
-        venue: 'ICETI',
-        year: 2025
+        title: 'An Adaptive Model for Unmasking Zero-Day Threats Using Federated Learning',
+        venue: 'Information Systems Engineering and Management, Springer',
+        year: 2026
       },
+      {
+        title: 'Implementation of Lightweight Machine Learning Models for Real-time Text Classification on Resource-Constrained Devices',
+        venue: 'Journal of Informatics and Web Engineering (JIWE)',
+        year: 2025
+      }
+    ]
+  });
+
+  await prisma.book.createMany({
+    data: [
       {
         title: 'Network Foundations: Communication Protocols and Security Fundamentals',
-        venue: 'CRC Press / Taylor & Francis (Book Chapter)',
-        year: 2026
-      },
-      {
-        title: 'Post-Quantum Verifiable Federated Learning for Regulatory-Compliant Healthcare AI',
-        venue: 'ACISP (Springer LNCS)',
-        year: 2026
+        publisher: 'CRC Press / Taylor & Francis',
+        year: 2026,
+        description: 'Book Chapter'
       }
     ]
   });
@@ -64,11 +62,11 @@ async function main() {
   await prisma.experience.createMany({
     data: [
       {
-        title: 'PhD Researcher (AI-based Brain MRI Analysis)',
-        organization: 'Multimedia University',
-        dateRange: '2025 - Present',
-        description: 'Developing deep learning and physics-informed models for predicting tissue deterioration in longitudinal MRI scans. Modeling cerebral microbleeds progression using AI-driven approaches.',
-        type: 'research'
+        title: 'Computer Science Teacher',
+        organization: 'IMAS International School (Putrajaya)',
+        dateRange: 'May 2025 - April 2026',
+        description: '',
+        type: 'work'
       },
       {
         title: 'Backend Developer',
@@ -81,34 +79,46 @@ async function main() {
         organization: 'Breakthrough Academy',
         dateRange: 'Nov 2023 - Feb 2024',
         type: 'work'
-      },
-      {
-        title: 'Participant',
-        organization: '“Be a Helper” (Koun Awnan) community support initiative',
-        dateRange: 'Oct 2023',
-        type: 'volunteer'
-      },
-      {
-        title: 'Participant',
-        organization: 'UMW Mangrove Tree Planting Programme',
-        dateRange: 'Nov 2022',
-        type: 'volunteer'
       }
     ]
   });
 
   await prisma.award.createMany({
     data: [
-      { title: 'Young Researcher Award', issuer: 'ICETI', year: '2025' },
-      { title: 'Research Excellence Award', issuer: 'ICETI', year: '2025' },
-      { title: 'Participation in The 3rd International Article Writing Competition', year: '2025' },
-      { title: "Dean's Award", issuer: 'Multimedia University/MMU', year: '2023 – 2024' },
-      { title: "Dean's Award", issuer: 'Multimedia University/MMU', year: '2022 - 2023' },
-      { title: 'Co-founder of first self-printing machine released in MMU', issuer: 'MMU', year: 'Oct 2023' }
+      { 
+        title: '2nd Prize, Postgraduate Category', 
+        issuer: '4th International Article Writing Competition (IAWC 2026), MMU Press', 
+        year: '2026' 
+      },
+      { 
+        title: 'Young Researcher Award', 
+        issuer: 'ICETI', 
+        year: '2025' 
+      },
+      { 
+        title: 'Research Excellence Award', 
+        issuer: 'ICETI', 
+        year: '2025' 
+      },
+      { 
+        title: 'Participation in The 3rd International Article Writing Competition', 
+        issuer: '', 
+        year: '2025' 
+      },
+      { 
+        title: "Dean's Award", 
+        issuer: 'Multimedia University/MMU', 
+        year: '2023 – 2024' 
+      },
+      { 
+        title: "Dean's Award", 
+        issuer: 'Multimedia University/MMU', 
+        year: '2022 - 2023' 
+      }
     ]
   });
 
-  console.log("Real CV database seeded successfully!");
+  console.log("Database seeded successfully!");
 }
 
 main().catch(e => { console.error(e); process.exit(1); }).finally(async () => { await prisma.$disconnect(); });
