@@ -23,7 +23,7 @@ export default async function Home() {
         <div className="container flex items-center gap-4" style={{flexWrap: 'wrap-reverse'}}>
           <ScrollReveal delay={100} styleClass="hero-content">
             <h1 className="hero-title">Dr. Marwah Al-Helali</h1>
-            <h2 className="hero-subtitle">PhD Researcher in AI & Medical Imaging</h2>
+            <h2 className="hero-subtitle">PhD Researcher in AI & Deep Learning</h2>
             <div className="social-links mt-6">
 
               {/* Email */}
@@ -90,6 +90,33 @@ export default async function Home() {
               className="hero-image"
               priority
             />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* PROFESSIONAL SUMMARY SECTION */}
+      <section className="section" style={{paddingTop: '3rem', paddingBottom: '3rem', background: 'white'}}>
+        <div className="container" style={{maxWidth: '900px'}}>
+          <ScrollReveal delay={100} styleClass="text-center mb-4">
+            <h2 className="section-title mb-3" style={{fontSize: '1.75rem', fontFamily: 'var(--font-serif)', color: 'var(--primary)'}}>About Me</h2>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={200}>
+            <div style={{
+              fontSize: '1rem',
+              lineHeight: '1.8',
+              color: 'var(--text-secondary)',
+              textAlign: 'justify',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}>
+              <p style={{marginBottom: '1.2rem'}}>
+                I am a PhD Researcher in Artificial Intelligence and Deep Learning, with research interests in machine learning, deep learning, predictive modelling, and intelligent systems. My work focuses on developing advanced AI methods to solve complex real-world problems and generate meaningful, data-driven insights.
+              </p>
+              <p style={{marginBottom: '0'}}>
+                I hold a First-Class Honours degree in Computer Science (Software Engineering) and have published multiple works in artificial intelligence and machine learning. I am particularly interested in developing robust and practical AI solutions and translating advanced computational methods into real-world applications.
+              </p>
+            </div>
           </ScrollReveal>
         </div>
       </section>
