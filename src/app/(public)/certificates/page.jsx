@@ -40,18 +40,13 @@ export default async function CertificatesPage() {
             <div className="grid-1 gap-4">
               {awards.map((award, idx) => (
                 <ScrollReveal delay={idx * 150 + 200} key={award.id}>
-                  <div className="card flex items-center gap-4" style={{
+                  <div className="card" style={{
                     padding: '1.5rem',
                     boxShadow: '0 10px 25px -5px rgba(0,0,0,0.05)',
                     borderLeft: '4px solid var(--accent)'
                   }}>
-                    <div style={{width: '70px', height: '70px', position: 'relative', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, boxShadow: '0 4px 6px rgba(0,0,0,0.1)'}}>
-                       <Image src="/uploads/award.png" alt="Award medal placeholder" fill style={{objectFit: 'cover'}} />
-                    </div>
-                    <div>
-                      <h4 style={{fontSize: '1.3rem', marginBottom: '0.2rem', color: 'var(--text-primary)'}}>{award.title}</h4>
-                      <p className="text-secondary font-bold" style={{fontSize: '0.95rem'}}>{award.issuer && `${award.issuer} • `}<span style={{color: 'var(--primary)'}}>{award.year}</span></p>
-                    </div>
+                    <h4 style={{fontSize: '1.3rem', marginBottom: '0.5rem', color: 'var(--text-primary)'}}>{award.title}</h4>
+                    <p className="text-secondary font-bold" style={{fontSize: '0.95rem'}}>{award.issuer && `${award.issuer} • `}<span style={{color: 'var(--primary)'}}>{award.year}</span></p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -95,12 +90,9 @@ export default async function CertificatesPage() {
                 <div className="grid-1 gap-3">
                   {academicCerts.map((cert, idx) => (
                     <ScrollReveal delay={idx * 150 + 300} key={cert.id}>
-                      <div className="card" style={{padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem'}}>
-                        <div style={{fontSize: '2rem'}}>📜</div>
-                        <div>
-                          <h4 style={{fontSize: '1.1rem'}}>{cert.name}</h4>
-                          <p className="text-secondary text-sm">{cert.issuer} &bull; {cert.year}</p>
-                        </div>
+                      <div className="card" style={{padding: '1.5rem'}}>
+                        <h4 style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>{cert.name}</h4>
+                        <p className="text-secondary text-sm">{cert.issuer} &bull; {cert.year}</p>
                       </div>
                     </ScrollReveal>
                   ))}
@@ -113,12 +105,9 @@ export default async function CertificatesPage() {
                 <div className="grid-1 gap-3">
                   {communityCerts.map((cert, idx) => (
                     <ScrollReveal delay={idx * 150 + 300} key={cert.id}>
-                      <div className="card" style={{padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem'}}>
-                         <div style={{fontSize: '2rem'}}>🤝</div>
-                         <div>
-                          <h4 style={{fontSize: '1.1rem'}}>{cert.name}</h4>
-                          <p className="text-secondary text-sm">{cert.issuer} &bull; {cert.year}</p>
-                         </div>
+                      <div className="card" style={{padding: '1.5rem'}}>
+                        <h4 style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>{cert.name}</h4>
+                        <p className="text-secondary text-sm">{cert.issuer} &bull; {cert.year}</p>
                       </div>
                     </ScrollReveal>
                   ))}

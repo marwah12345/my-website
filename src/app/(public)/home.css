@@ -223,19 +223,20 @@
     grid-template-columns: 1fr;
   }
   
-  /* About Me Section Mobile */
-  section[style*="paddingTop: '4rem'"] > div > div > div[style*="padding: '3rem'"] {
-    padding: 2rem 1.5rem !important;
+  /* Education Timeline Mobile - make slideshow stack below text */
+  #about .mt-4 > div > div > div {
+    flex-direction: column !important;
   }
   
-  /* Latest Highlights Section Mobile */
-  section[style*="paddingTop: '4rem'"] h2 {
-    font-size: 2rem !important;
+  #about .mt-4 > div > div > div > div:first-child {
+    min-width: 100% !important;
   }
   
-  /* Section headers mobile */
-  section[style*="paddingTop: '4rem'"] h3 {
-    font-size: 1.2rem !important;
+  #about .mt-4 > div > div > div > div:last-child {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 180px !important;
   }
 }
 
