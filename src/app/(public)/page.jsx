@@ -208,21 +208,21 @@ export default async function Home() {
 
           {/* Industry Experience */}
           <div style={{marginBottom: '2rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', borderBottom: '2px solid #1e3a8a', paddingBottom: '0.5rem'}}>
-              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: '#1e3a8a', margin: 0}}>Industry Experience</h3>
-              <Link href="/experience" style={{fontSize: '0.8rem', fontWeight: 600, color: '#1e3a8a'}}>View All →</Link>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
+              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Industry Experience</h3>
+              <Link href="/experience" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
             </div>
             <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
               {industryExperiences.map((exp, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={exp.id}>
-                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #1e3a8a', transition: 'transform 0.2s ease'}}>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.3rem', flexWrap: 'wrap', gap: '0.5rem'}}>
-                      <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
-                      <span style={{fontSize: '0.72rem', fontWeight: 600, color: '#1e3a8a', whiteSpace: 'nowrap'}}>{exp.dateRange}</span>
+                  <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem'}}>
+                      <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
+                      <span style={{fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', whiteSpace: 'nowrap'}}>{exp.dateRange}</span>
                     </div>
-                    <div style={{fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600, marginBottom: '0.4rem'}}>{exp.organization}</div>
+                    <div style={{fontSize: '0.85rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem'}}>{exp.organization}</div>
                     {exp.description && (
-                      <p style={{fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0}}>
+                      <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0}}>
                         {exp.description}
                       </p>
                     )}
@@ -234,21 +234,21 @@ export default async function Home() {
 
           {/* Academic Experience */}
           <div style={{marginBottom: '2rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', borderBottom: '2px solid #7c3aed', paddingBottom: '0.5rem'}}>
-              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: '#7c3aed', margin: 0}}>Academic Experience</h3>
-              <Link href="/experience" style={{fontSize: '0.8rem', fontWeight: 600, color: '#7c3aed'}}>View All →</Link>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
+              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Academic Experience</h3>
+              <Link href="/experience" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
             </div>
             <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
               {academicExperiences.map((exp, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={exp.id}>
-                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #7c3aed', transition: 'transform 0.2s ease'}}>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.3rem', flexWrap: 'wrap', gap: '0.5rem'}}>
-                      <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
-                      <span style={{fontSize: '0.72rem', fontWeight: 600, color: '#7c3aed', whiteSpace: 'nowrap'}}>{exp.dateRange}</span>
+                  <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem'}}>
+                      <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
+                      <span style={{fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', whiteSpace: 'nowrap'}}>{exp.dateRange}</span>
                     </div>
-                    <div style={{fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600, marginBottom: '0.4rem'}}>{exp.organization}</div>
+                    <div style={{fontSize: '0.85rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem'}}>{exp.organization}</div>
                     {exp.description && (
-                      <p style={{fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0}}>
+                      <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0}}>
                         {exp.description}
                       </p>
                     )}
@@ -260,19 +260,19 @@ export default async function Home() {
 
           {/* Publications */}
           <div style={{marginBottom: '2rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', borderBottom: '2px solid var(--primary)', paddingBottom: '0.5rem'}}>
-              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0}}>Publications</h3>
-              <Link href="/papers" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)'}}>View All →</Link>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
+              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Publications</h3>
+              <Link href="/papers" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
             </div>
             <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
               {papers.map((pub, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={pub.id}>
-                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid var(--primary)', transition: 'transform 0.2s ease'}}>
-                    <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.4'}}>{pub.title}</h4>
-                    <div style={{fontSize: '0.78rem', color: 'var(--text-secondary)'}}>
-                      <span style={{fontWeight: 600}}>{pub.venue}</span>
+                  <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
+                    <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem', lineHeight: '1.4'}}>{pub.title}</h4>
+                    <div style={{fontSize: '0.85rem', color: 'var(--text-secondary)'}}>
+                      <span style={{fontWeight: 600, color: 'var(--primary)'}}>{pub.venue}</span>
                       {pub.year && <span> • {pub.year}</span>}
-                      {pub.authors && <span style={{display: 'block', fontStyle: 'italic', marginTop: '0.2rem'}}>{pub.authors}</span>}
+                      {pub.authors && <span style={{display: 'block', fontStyle: 'italic', marginTop: '0.3rem'}}>{pub.authors}</span>}
                     </div>
                   </div>
                 </ScrollReveal>
@@ -282,16 +282,16 @@ export default async function Home() {
 
           {/* Awards */}
           <div style={{marginBottom: '2rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', borderBottom: '2px solid var(--accent)', paddingBottom: '0.5rem'}}>
-              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--accent)', margin: 0}}>Awards & Honors</h3>
-              <Link href="/certificates" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent)'}}>View All →</Link>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
+              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Awards & Honors</h3>
+              <Link href="/certificates" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
             </div>
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem'}}>
               {awards.map((award, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={award.id}>
-                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderTop: '3px solid var(--accent)', transition: 'transform 0.2s ease'}}>
-                    <h4 style={{fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: '1.3'}}>{award.title}</h4>
-                    <p style={{fontSize: '0.75rem', color: 'var(--text-secondary)', margin: 0}}>
+                  <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', borderTop: '3px solid var(--accent)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
+                    <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.3'}}>{award.title}</h4>
+                    <p style={{fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0}}>
                       {award.issuer && <span>{award.issuer}</span>}
                       {award.year && <span> • {award.year}</span>}
                     </p>
@@ -306,17 +306,17 @@ export default async function Home() {
             
             {/* Projects */}
             <div>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', borderBottom: '2px solid #1e3a8a', paddingBottom: '0.5rem'}}>
-                <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: '#1e3a8a', margin: 0}}>Projects</h3>
-                <Link href="/projects" style={{fontSize: '0.8rem', fontWeight: 600, color: '#1e3a8a'}}>View All →</Link>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
+                <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Projects</h3>
+                <Link href="/projects" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
               </div>
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {projects.map((proj, idx) => (
                   <ScrollReveal delay={(idx + 1) * 100} key={proj.id}>
-                    <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #1e3a8a', transition: 'transform 0.2s ease'}}>
-                      <h4 style={{fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: '1.3'}}>{proj.title}</h4>
+                    <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
+                      <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.3'}}>{proj.title}</h4>
                       {proj.description && (
-                        <p style={{fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>
                           {proj.description}
                         </p>
                       )}
@@ -328,20 +328,20 @@ export default async function Home() {
 
             {/* Books */}
             <div>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', borderBottom: '2px solid #047857', paddingBottom: '0.5rem'}}>
-                <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: '#047857', margin: 0}}>Books</h3>
-                <Link href="/books" style={{fontSize: '0.8rem', fontWeight: 600, color: '#047857'}}>View All →</Link>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
+                <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Books</h3>
+                <Link href="/books" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
               </div>
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {books.map((book, idx) => (
                   <ScrollReveal delay={(idx + 1) * 100} key={book.id}>
-                    <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #047857', transition: 'transform 0.2s ease'}}>
-                      <h4 style={{fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: '1.3'}}>{book.title}</h4>
-                      <p style={{fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600, marginBottom: '0.3rem'}}>
+                    <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
+                      <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.3'}}>{book.title}</h4>
+                      <p style={{fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.4rem'}}>
                         {book.publisher && `${book.publisher} • `}{book.year}
                       </p>
                       {book.description && (
-                        <p style={{fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0}}>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0}}>
                           {book.description}
                         </p>
                       )}
