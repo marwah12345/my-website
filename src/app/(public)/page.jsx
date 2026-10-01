@@ -361,7 +361,7 @@ export default async function Home() {
           )}
 
           {/* Publications */}
-          <div style={{marginBottom: '2.5rem'}}>
+          <div style={{marginBottom: '2.5rem', background: 'linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%)', padding: '2rem', borderRadius: '12px', border: '1px solid #bae6fd'}}>
             <ScrollReveal delay={150}>
               <div style={{
                 display: 'flex', 
@@ -401,7 +401,7 @@ export default async function Home() {
                     <h4 style={{fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '1rem', lineHeight: '1.4', flex: 1}}>{pub.title}</h4>
                     <div style={{fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', color: 'var(--text-secondary)', borderTop: '1px solid var(--border)', paddingTop: '0.75rem', marginTop: 'auto'}}>
                       <div style={{fontWeight: 600, color: 'var(--primary)', marginBottom: '0.35rem'}}>{pub.venue}</div>
-                      {pub.year && <div style={{fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', color: 'var(--accent)', fontWeight: 600}}>{pub.year}</div>}
+                      {pub.year && <div style={{fontSize: '0.75rem', color: '#64748b', fontWeight: 500}}>{pub.year}</div>}
                       {pub.authors && <div style={{fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', fontStyle: 'italic', marginTop: '0.5rem', color: 'var(--text-light)'}}>{pub.authors}</div>}
                     </div>
                   </div>
@@ -411,10 +411,10 @@ export default async function Home() {
           </div>
 
           {/* Awards, Projects & Books Grid */}
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(2rem, 4vw, 3rem)'}}>
+          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(1.5rem, 4vw, 2rem)'}}>
             
             {/* Awards */}
-            <div>
+            <div style={{background: 'linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #fde68a'}}>
               <ScrollReveal delay={150}>
                 <div style={{
                   display: 'flex', 
@@ -443,7 +443,7 @@ export default async function Home() {
                       <h4 style={{fontSize: 'clamp(0.9rem, 2.5vw, 1rem)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem', lineHeight: '1.4'}}>{award.title}</h4>
                       <p style={{fontSize: 'clamp(0.8rem, 2vw, 0.85rem)', color: 'var(--text-secondary)', margin: 0}}>
                         {award.issuer && <span>{award.issuer}</span>}
-                        {award.year && <span style={{color: 'var(--accent)', fontWeight: 600}}> • {award.year}</span>}
+                        {award.year && <span style={{color: '#64748b', fontWeight: 500, fontSize: '0.75rem'}}> • {award.year}</span>}
                       </p>
                     </div>
                   </ScrollReveal>
@@ -452,7 +452,7 @@ export default async function Home() {
             </div>
 
             {/* Projects */}
-            <div>
+            <div style={{background: 'linear-gradient(135deg, #f0fdf4 0%, #f7fee7 100%)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #bbf7d0'}}>
               <ScrollReveal delay={150}>
                 <div style={{
                   display: 'flex', 
@@ -491,7 +491,7 @@ export default async function Home() {
             </div>
 
             {/* Books */}
-            <div>
+            <div style={{background: 'linear-gradient(135deg, #fce7f3 0%, #fef2f2 100%)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #fbcfe8'}}>
               <ScrollReveal delay={150}>
                 <div style={{
                   display: 'flex', 
@@ -518,7 +518,7 @@ export default async function Home() {
                       transition: 'all 0.2s ease'
                     }}>
                       <h4 style={{fontSize: 'clamp(0.9rem, 2.5vw, 1rem)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem', lineHeight: '1.4'}}>{book.title}</h4>
-                      <p style={{fontSize: 'clamp(0.8rem, 2vw, 0.85rem)', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem'}}>
+                      <p style={{fontSize: '0.75rem', color: '#64748b', fontWeight: 500, marginBottom: '0.5rem'}}>
                         {book.publisher && `${book.publisher} • `}{book.year}
                       </p>
                       {book.description && (
