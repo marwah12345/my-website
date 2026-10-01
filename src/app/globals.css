@@ -68,11 +68,70 @@ a:hover {
   .container {
     padding: 0 1rem;
   }
+
+  /* Force single column layouts on mobile */
+  [style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Improve text sizing on mobile */
+  body {
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Improve button sizing on mobile */
+  .btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Better card spacing on mobile */
+  .card {
+    padding: 1.25rem;
+  }
 }
 
 @media (max-width: 480px) {
   .container {
     padding: 0 0.75rem;
+  }
+
+  /* Even smaller text on very small phones */
+  body {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
   }
 }
 
