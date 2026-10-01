@@ -95,13 +95,13 @@ export default async function Home() {
       </section>
 
       {/* PROFESSIONAL SUMMARY SECTION */}
-      <section className="section" style={{paddingTop: '4rem', paddingBottom: '4rem', background: 'linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%)'}}>
-        <div className="container" style={{maxWidth: '1100px'}}>
+      <section className="section" style={{paddingTop: '3.5rem', paddingBottom: '3.5rem', background: 'linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%)'}}>
+        <div className="container" style={{maxWidth: '1000px'}}>
           <ScrollReveal delay={100}>
-            <div style={{textAlign: 'center', marginBottom: '3rem'}}>
+            <div style={{textAlign: 'center', marginBottom: '2.5rem'}}>
               <h2 style={{
                 fontFamily: 'var(--font-serif)', 
-                fontSize: '2.5rem', 
+                fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', 
                 color: 'var(--primary)',
                 marginBottom: '0.5rem',
                 fontWeight: 700
@@ -119,41 +119,23 @@ export default async function Home() {
           <ScrollReveal delay={200}>
             <div style={{
               background: 'white',
-              borderRadius: '16px',
-              padding: '3rem',
-              boxShadow: '0 10px 40px -10px rgba(0,0,0,0.1)',
+              borderRadius: '12px',
+              padding: 'clamp(1.5rem, 4vw, 2.5rem)',
+              boxShadow: '0 8px 30px -8px rgba(0,0,0,0.1)',
               border: '1px solid var(--border)',
-              maxWidth: '900px',
+              maxWidth: '850px',
               margin: '0 auto'
             }}>
               <div style={{
-                fontSize: '1.1rem',
-                lineHeight: '2',
+                fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+                lineHeight: '1.9',
                 color: 'var(--text-secondary)',
                 textAlign: 'left'
               }}>
-                <p style={{marginBottom: '1.5rem', position: 'relative', paddingLeft: '1.5rem'}}>
-                  <span style={{
-                    position: 'absolute',
-                    left: 0,
-                    top: '0.5rem',
-                    width: '4px',
-                    height: '4px',
-                    background: 'var(--accent)',
-                    borderRadius: '50%'
-                  }}></span>
+                <p style={{marginBottom: '1.25rem', paddingLeft: '1rem', borderLeft: '3px solid var(--accent)'}}>
                   I am a PhD Researcher in Artificial Intelligence and Deep Learning, with research interests in machine learning, deep learning, predictive modelling, and intelligent systems. My work focuses on developing advanced AI methods to solve complex real-world problems and generate meaningful, data-driven insights.
                 </p>
-                <p style={{margin: 0, position: 'relative', paddingLeft: '1.5rem'}}>
-                  <span style={{
-                    position: 'absolute',
-                    left: 0,
-                    top: '0.5rem',
-                    width: '4px',
-                    height: '4px',
-                    background: 'var(--accent)',
-                    borderRadius: '50%'
-                  }}></span>
+                <p style={{margin: 0, paddingLeft: '1rem', borderLeft: '3px solid var(--accent)'}}>
                   I hold a First-Class Honours degree in Computer Science (Software Engineering) and have published multiple works in artificial intelligence and machine learning. I am particularly interested in developing robust and practical AI solutions and translating advanced computational methods into real-world applications.
                 </p>
               </div>
@@ -238,13 +220,13 @@ export default async function Home() {
       </section>
 
       {/* COMBINED LATEST HIGHLIGHTS SECTION - All Categories */}
-      <section className="section" style={{paddingTop: '4rem', paddingBottom: '4rem', background: '#f8fafc'}}>
-        <div className="container" style={{maxWidth: '1100px'}}>
+      <section className="section" style={{paddingTop: '3.5rem', paddingBottom: '3.5rem', background: '#f8fafc'}}>
+        <div className="container" style={{maxWidth: '1000px'}}>
           <ScrollReveal delay={100}>
-            <div style={{textAlign: 'center', marginBottom: '3.5rem'}}>
+            <div style={{textAlign: 'center', marginBottom: '3rem'}}>
               <h2 style={{
                 fontFamily: 'var(--font-serif)', 
-                fontSize: '2.5rem', 
+                fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', 
                 color: 'var(--primary)',
                 marginBottom: '0.75rem',
                 fontWeight: 700
@@ -253,93 +235,68 @@ export default async function Home() {
                 width: '60px',
                 height: '4px',
                 background: 'var(--accent)',
-                margin: '0 auto 1rem',
+                margin: '0 auto',
                 borderRadius: '2px'
               }}></div>
-              <p style={{fontSize: '1.05rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto'}}>
-                Recent achievements, publications, and contributions across industry, academia, and research
-              </p>
             </div>
           </ScrollReveal>
 
           {/* Industry Experience */}
-          <div style={{marginBottom: '3rem'}}>
+          <div style={{marginBottom: '2.5rem'}}>
             <ScrollReveal delay={150}>
               <div style={{
                 display: 'flex', 
                 alignItems: 'center', 
-                gap: '1rem', 
-                marginBottom: '1.5rem',
-                paddingBottom: '1rem',
+                justifyContent: 'space-between',
+                marginBottom: '1.25rem',
+                paddingBottom: '0.75rem',
                 borderBottom: '2px solid var(--primary)'
               }}>
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '12px',
-                  background: 'linear-gradient(135deg, var(--primary) 0%, #1e40af 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  boxShadow: '0 4px 12px rgba(30,58,138,0.2)'
-                }}>💼</div>
-                <div style={{flex: 1}}>
-                  <h3 style={{fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Industry Experience</h3>
-                </div>
+                <h3 style={{fontSize: 'clamp(1.15rem, 3vw, 1.4rem)', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Industry Experience</h3>
                 <Link href="/experience" style={{
-                  fontSize: '0.9rem', 
+                  fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', 
                   fontWeight: 600, 
                   color: 'var(--primary)', 
                   textDecoration: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  padding: '0.5rem 1rem',
-                  borderRadius: '8px',
-                  transition: 'all 0.2s',
-                  background: 'white',
-                  border: '1px solid var(--border)'
+                  whiteSpace: 'nowrap'
                 }}>
-                  View All <span style={{fontSize: '1.1rem'}}>→</span>
+                  View All →
                 </Link>
               </div>
             </ScrollReveal>
-            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem'}}>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem'}}>
               {industryExperiences.map((exp, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={exp.id}>
                   <div style={{
-                    padding: '1.75rem', 
+                    padding: 'clamp(1.25rem, 3vw, 1.5rem)', 
                     background: 'white', 
-                    borderRadius: '12px', 
+                    borderRadius: '10px', 
                     border: '1px solid var(--border)', 
-                    boxShadow: '0 4px 16px -4px rgba(0,0,0,0.08)', 
+                    borderLeft: '4px solid var(--primary)',
+                    boxShadow: '0 4px 12px -4px rgba(0,0,0,0.08)', 
                     transition: 'all 0.3s ease',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column'
                   }}>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem', gap: '1rem'}}>
-                      <h4 style={{fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0, flex: 1}}>{exp.title}</h4>
+                    <div style={{display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '0.75rem'}}>
+                      <h4 style={{fontSize: 'clamp(1rem, 2.5vw, 1.1rem)', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
                       <span style={{
-                        fontSize: '0.75rem', 
+                        fontSize: 'clamp(0.7rem, 2vw, 0.75rem)', 
                         fontWeight: 600, 
                         color: 'white',
                         background: 'var(--accent)',
                         padding: '0.25rem 0.75rem',
                         borderRadius: '20px',
-                        whiteSpace: 'nowrap',
-                        boxShadow: '0 2px 8px rgba(245,158,11,0.3)'
+                        alignSelf: 'flex-start',
+                        boxShadow: '0 2px 6px rgba(245,158,11,0.25)'
                       }}>{exp.dateRange}</span>
                     </div>
-                    <div style={{fontSize: '0.95rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
-                      <span style={{fontSize: '1rem'}}>🏢</span>
+                    <div style={{fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem'}}>
                       {exp.organization}
                     </div>
                     {exp.description && (
-                      <p style={{fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.7', margin: 0, flex: 1}}>
+                      <p style={{fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', color: 'var(--text-secondary)', lineHeight: '1.7', margin: 0, flex: 1}}>
                         {exp.description}
                       </p>
                     )}
