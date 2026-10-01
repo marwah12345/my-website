@@ -250,9 +250,7 @@ export default async function Home() {
             <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
               {papers.map((pub, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={pub.id}>
-                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid var(--primary)', transition: 'transform 0.2s ease', cursor: 'default'}} 
-                       onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(4px)'}
-                       onMouseOut={(e) => e.currentTarget.style.transform = 'translateX(0)'}>
+                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid var(--primary)', transition: 'transform 0.2s ease'}}>
                     <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.4'}}>{pub.title}</h4>
                     <div style={{fontSize: '0.78rem', color: 'var(--text-secondary)'}}>
                       <span style={{fontWeight: 600}}>{pub.venue}</span>
@@ -274,9 +272,7 @@ export default async function Home() {
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem'}}>
               {awards.map((award, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={award.id}>
-                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderTop: '3px solid var(--accent)', transition: 'transform 0.2s ease', cursor: 'default'}}
-                       onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-                       onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderTop: '3px solid var(--accent)', transition: 'transform 0.2s ease'}}>
                     <h4 style={{fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: '1.3'}}>{award.title}</h4>
                     <p style={{fontSize: '0.75rem', color: 'var(--text-secondary)', margin: 0}}>
                       {award.issuer && <span>{award.issuer}</span>}
@@ -300,9 +296,7 @@ export default async function Home() {
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {projects.map((proj, idx) => (
                   <ScrollReveal delay={(idx + 1) * 100} key={proj.id}>
-                    <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #1e3a8a', transition: 'transform 0.2s ease', cursor: 'default'}}
-                         onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(4px)'}
-                         onMouseOut={(e) => e.currentTarget.style.transform = 'translateX(0)'}>
+                    <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #1e3a8a', transition: 'transform 0.2s ease'}}>
                       <h4 style={{fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: '1.3'}}>{proj.title}</h4>
                       {proj.description && (
                         <p style={{fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>
@@ -324,9 +318,7 @@ export default async function Home() {
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {books.map((book, idx) => (
                   <ScrollReveal delay={(idx + 1) * 100} key={book.id}>
-                    <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #047857', transition: 'transform 0.2s ease', cursor: 'default'}}
-                         onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(4px)'}
-                         onMouseOut={(e) => e.currentTarget.style.transform = 'translateX(0)'}>
+                    <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #047857', transition: 'transform 0.2s ease'}}>
                       <h4 style={{fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.3rem', lineHeight: '1.3'}}>{book.title}</h4>
                       <p style={{fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600, marginBottom: '0.3rem'}}>
                         {book.publisher && `${book.publisher} • `}{book.year}
