@@ -3,14 +3,14 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import ScrollReveal from "@/components/ScrollReveal";
 import AutoSlideshow from "@/components/AutoSlideshow";
-import ExpSlideshow from "@/components/ExpSlideshow";
 import "./home.css";
 
 export default async function Home() {
   const education = await db.education.findMany({ orderBy: { yearStart: 'desc' } });
   
-  // Fetch latest 2 of everything else for highlighting
-  const experiences = await db.experience.findMany({ take: 2, where: { type: 'work' }, orderBy: { id: 'asc' } }); 
+  // Fetch latest 2 of everything for highlighting
+  const industryExperiences = await db.experience.findMany({ take: 2, where: { type: 'work' }, orderBy: { id: 'desc' } }); 
+  const academicExperiences = await db.experience.findMany({ take: 2, where: { type: 'research' }, orderBy: { id: 'desc' } });
   const papers = await db.paper.findMany({ take: 2, orderBy: { year: 'desc' } });
   const books = await db.book.findMany({ take: 2, orderBy: { year: 'desc' } });
   const projects = await db.project.findMany({ take: 2, orderBy: { createdAt: 'desc' } });
@@ -169,77 +169,67 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* INDUSTRY EXPERIENCE SECTION */}
-      <section className="exp-section" id="experience">
-        <div className="container">
-
-          {/* Section header */}
-          <ScrollReveal delay={100} styleClass="exp-section-header">
-            <div className="exp-header-left">
-              <div className="exp-eyebrow">
-                Latest Industry Work
-              </div>
-              <h2 className="exp-section-title">Industry Experience</h2>
-            </div>
-            <Link href="/experience" className="exp-view-btn">
-              View Full Experience →
-            </Link>
-          </ScrollReveal>
-
-          {/* Cards — vertical with big image on top */}
-          <div className="exp-cards">
-            {experiences.map((exp, idx) => {
-              // Aonic gets a multi-photo slideshow
-              const aonicPhotos = [
-                '/uploads/aonic-3.jpg',
-                '/uploads/aonic-4.png',
-              ];
-              const isAonic = exp.organization.toLowerCase().includes('aonic');
-
-              return (
-                <ScrollReveal delay={(idx + 1) * 150} key={exp.id}>
-                  <div className="exp-card">
-                    <div className="exp-card-image" style={{position: 'relative'}}>
-                      {isAonic ? (
-                        <ExpSlideshow images={aonicPhotos} interval={3500} />
-                      ) : exp.image ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={exp.image}
-                          alt={exp.organization}
-                          style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}}
-                        />
-                      ) : (
-                        <div className="exp-card-image-placeholder">
-                          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-                        </div>
-                      )}
-                      <div className="exp-card-image-overlay" />
-                    </div>
-                    <div className="exp-card-body">
-                      <span className="exp-card-badge">{exp.dateRange}</span>
-                      <div className="exp-card-org">{exp.organization}</div>
-                      <h3 className="exp-card-title">{exp.title}</h3>
-                      {exp.description && <p className="exp-card-desc">{exp.description}</p>}
-                    </div>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* COMBINED HIGHLIGHTS SECTION - Clean Text-Only Layout */}
+      {/* COMBINED LATEST HIGHLIGHTS SECTION - All Categories */}
       <section className="section" style={{paddingTop: '2.5rem', paddingBottom: '3rem', background: 'var(--bg-secondary)'}}>
         <div className="container" style={{maxWidth: '900px'}}>
           <ScrollReveal delay={100} styleClass="text-center mb-4">
             <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--primary)'}}>Latest Highlights</h2>
             <p className="text-secondary" style={{fontSize: '0.85rem', marginBottom: '2.5rem'}}>
-              Recent publications, awards, projects, and literature
+              Recent experience, publications, awards, projects, and literature
             </p>
           </ScrollReveal>
+
+          {/* Industry Experience */}
+          <div style={{marginBottom: '2rem'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', borderBottom: '2px solid #1e3a8a', paddingBottom: '0.5rem'}}>
+              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: '#1e3a8a', margin: 0}}>Industry Experience</h3>
+              <Link href="/experience" style={{fontSize: '0.8rem', fontWeight: 600, color: '#1e3a8a'}}>View All →</Link>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+              {industryExperiences.map((exp, idx) => (
+                <ScrollReveal delay={(idx + 1) * 100} key={exp.id}>
+                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #1e3a8a', transition: 'transform 0.2s ease'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.3rem', flexWrap: 'wrap', gap: '0.5rem'}}>
+                      <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
+                      <span style={{fontSize: '0.72rem', fontWeight: 600, color: '#1e3a8a', whiteSpace: 'nowrap'}}>{exp.dateRange}</span>
+                    </div>
+                    <div style={{fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600, marginBottom: '0.4rem'}}>{exp.organization}</div>
+                    {exp.description && (
+                      <p style={{fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0}}>
+                        {exp.description}
+                      </p>
+                    )}
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+
+          {/* Academic Experience */}
+          <div style={{marginBottom: '2rem'}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', borderBottom: '2px solid #7c3aed', paddingBottom: '0.5rem'}}>
+              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: '#7c3aed', margin: 0}}>Academic Experience</h3>
+              <Link href="/experience" style={{fontSize: '0.8rem', fontWeight: 600, color: '#7c3aed'}}>View All →</Link>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+              {academicExperiences.map((exp, idx) => (
+                <ScrollReveal delay={(idx + 1) * 100} key={exp.id}>
+                  <div style={{padding: '1rem', background: 'white', borderRadius: 'var(--radius)', borderLeft: '3px solid #7c3aed', transition: 'transform 0.2s ease'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.3rem', flexWrap: 'wrap', gap: '0.5rem'}}>
+                      <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
+                      <span style={{fontSize: '0.72rem', fontWeight: 600, color: '#7c3aed', whiteSpace: 'nowrap'}}>{exp.dateRange}</span>
+                    </div>
+                    <div style={{fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600, marginBottom: '0.4rem'}}>{exp.organization}</div>
+                    {exp.description && (
+                      <p style={{fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0}}>
+                        {exp.description}
+                      </p>
+                    )}
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
 
           {/* Publications */}
           <div style={{marginBottom: '2rem'}}>
