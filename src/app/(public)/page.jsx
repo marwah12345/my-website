@@ -22,7 +22,7 @@ export default async function Home() {
       <section className="hero">
         <div className="container flex items-center gap-4" style={{flexWrap: 'wrap-reverse'}}>
           <ScrollReveal delay={100} styleClass="hero-content">
-            <h1 className="hero-title">Dr. Marwah Zaid</h1>
+            <h1 className="hero-title">Dr. Marwah Al-Helali</h1>
             <h2 className="hero-subtitle">PhD Researcher in AI & Medical Imaging</h2>
             <div className="social-links mt-6">
 
@@ -84,7 +84,7 @@ export default async function Home() {
           <ScrollReveal delay={300} styleClass="hero-image-wrapper mx-auto">
             <Image 
               src="/uploads/profile.jpeg" 
-              alt="Dr. Marwah Zaid" 
+              alt="Dr. Marwah Al-Helali" 
               width={400} 
               height={400} 
               className="hero-image"
