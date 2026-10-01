@@ -95,27 +95,68 @@ export default async function Home() {
       </section>
 
       {/* PROFESSIONAL SUMMARY SECTION */}
-      <section className="section" style={{paddingTop: '3rem', paddingBottom: '3rem', background: 'white'}}>
-        <div className="container" style={{maxWidth: '900px'}}>
-          <ScrollReveal delay={100} styleClass="text-center mb-4">
-            <h2 className="section-title mb-3" style={{fontSize: '1.75rem', fontFamily: 'var(--font-serif)', color: 'var(--primary)'}}>About Me</h2>
+      <section className="section" style={{paddingTop: '4rem', paddingBottom: '4rem', background: 'linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%)'}}>
+        <div className="container" style={{maxWidth: '1100px'}}>
+          <ScrollReveal delay={100}>
+            <div style={{textAlign: 'center', marginBottom: '3rem'}}>
+              <h2 style={{
+                fontFamily: 'var(--font-serif)', 
+                fontSize: '2.5rem', 
+                color: 'var(--primary)',
+                marginBottom: '0.5rem',
+                fontWeight: 700
+              }}>About Me</h2>
+              <div style={{
+                width: '60px',
+                height: '4px',
+                background: 'var(--accent)',
+                margin: '0 auto',
+                borderRadius: '2px'
+              }}></div>
+            </div>
           </ScrollReveal>
           
           <ScrollReveal delay={200}>
             <div style={{
-              fontSize: '1rem',
-              lineHeight: '1.8',
-              color: 'var(--text-secondary)',
-              textAlign: 'justify',
-              maxWidth: '800px',
+              background: 'white',
+              borderRadius: '16px',
+              padding: '3rem',
+              boxShadow: '0 10px 40px -10px rgba(0,0,0,0.1)',
+              border: '1px solid var(--border)',
+              maxWidth: '900px',
               margin: '0 auto'
             }}>
-              <p style={{marginBottom: '1.2rem'}}>
-                I am a PhD Researcher in Artificial Intelligence and Deep Learning, with research interests in machine learning, deep learning, predictive modelling, and intelligent systems. My work focuses on developing advanced AI methods to solve complex real-world problems and generate meaningful, data-driven insights.
-              </p>
-              <p style={{marginBottom: '0'}}>
-                I hold a First-Class Honours degree in Computer Science (Software Engineering) and have published multiple works in artificial intelligence and machine learning. I am particularly interested in developing robust and practical AI solutions and translating advanced computational methods into real-world applications.
-              </p>
+              <div style={{
+                fontSize: '1.1rem',
+                lineHeight: '2',
+                color: 'var(--text-secondary)',
+                textAlign: 'left'
+              }}>
+                <p style={{marginBottom: '1.5rem', position: 'relative', paddingLeft: '1.5rem'}}>
+                  <span style={{
+                    position: 'absolute',
+                    left: 0,
+                    top: '0.5rem',
+                    width: '4px',
+                    height: '4px',
+                    background: 'var(--accent)',
+                    borderRadius: '50%'
+                  }}></span>
+                  I am a PhD Researcher in Artificial Intelligence and Deep Learning, with research interests in machine learning, deep learning, predictive modelling, and intelligent systems. My work focuses on developing advanced AI methods to solve complex real-world problems and generate meaningful, data-driven insights.
+                </p>
+                <p style={{margin: 0, position: 'relative', paddingLeft: '1.5rem'}}>
+                  <span style={{
+                    position: 'absolute',
+                    left: 0,
+                    top: '0.5rem',
+                    width: '4px',
+                    height: '4px',
+                    background: 'var(--accent)',
+                    borderRadius: '50%'
+                  }}></span>
+                  I hold a First-Class Honours degree in Computer Science (Software Engineering) and have published multiple works in artificial intelligence and machine learning. I am particularly interested in developing robust and practical AI solutions and translating advanced computational methods into real-world applications.
+                </p>
+              </div>
             </div>
           </ScrollReveal>
         </div>
@@ -197,32 +238,108 @@ export default async function Home() {
       </section>
 
       {/* COMBINED LATEST HIGHLIGHTS SECTION - All Categories */}
-      <section className="section" style={{paddingTop: '2.5rem', paddingBottom: '3rem', background: 'var(--bg-secondary)'}}>
-        <div className="container" style={{maxWidth: '900px'}}>
-          <ScrollReveal delay={100} styleClass="text-center mb-4">
-            <h2 className="mb-1" style={{fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--primary)'}}>Latest Highlights</h2>
-            <p className="text-secondary" style={{fontSize: '0.85rem', marginBottom: '2.5rem'}}>
-              Recent experience, publications, awards, projects, and literature
-            </p>
+      <section className="section" style={{paddingTop: '4rem', paddingBottom: '4rem', background: '#f8fafc'}}>
+        <div className="container" style={{maxWidth: '1100px'}}>
+          <ScrollReveal delay={100}>
+            <div style={{textAlign: 'center', marginBottom: '3.5rem'}}>
+              <h2 style={{
+                fontFamily: 'var(--font-serif)', 
+                fontSize: '2.5rem', 
+                color: 'var(--primary)',
+                marginBottom: '0.75rem',
+                fontWeight: 700
+              }}>Latest Highlights</h2>
+              <div style={{
+                width: '60px',
+                height: '4px',
+                background: 'var(--accent)',
+                margin: '0 auto 1rem',
+                borderRadius: '2px'
+              }}></div>
+              <p style={{fontSize: '1.05rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto'}}>
+                Recent achievements, publications, and contributions across industry, academia, and research
+              </p>
+            </div>
           </ScrollReveal>
 
           {/* Industry Experience */}
-          <div style={{marginBottom: '2rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
-              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Industry Experience</h3>
-              <Link href="/experience" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
-            </div>
-            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+          <div style={{marginBottom: '3rem'}}>
+            <ScrollReveal delay={150}>
+              <div style={{
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '1rem', 
+                marginBottom: '1.5rem',
+                paddingBottom: '1rem',
+                borderBottom: '2px solid var(--primary)'
+              }}>
+                <div style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, var(--primary) 0%, #1e40af 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  boxShadow: '0 4px 12px rgba(30,58,138,0.2)'
+                }}>💼</div>
+                <div style={{flex: 1}}>
+                  <h3 style={{fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Industry Experience</h3>
+                </div>
+                <Link href="/experience" style={{
+                  fontSize: '0.9rem', 
+                  fontWeight: 600, 
+                  color: 'var(--primary)', 
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '8px',
+                  transition: 'all 0.2s',
+                  background: 'white',
+                  border: '1px solid var(--border)'
+                }}>
+                  View All <span style={{fontSize: '1.1rem'}}>→</span>
+                </Link>
+              </div>
+            </ScrollReveal>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem'}}>
               {industryExperiences.map((exp, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={exp.id}>
-                  <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem'}}>
-                      <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
-                      <span style={{fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', whiteSpace: 'nowrap'}}>{exp.dateRange}</span>
+                  <div style={{
+                    padding: '1.75rem', 
+                    background: 'white', 
+                    borderRadius: '12px', 
+                    border: '1px solid var(--border)', 
+                    boxShadow: '0 4px 16px -4px rgba(0,0,0,0.08)', 
+                    transition: 'all 0.3s ease',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column'
+                  }}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem', gap: '1rem'}}>
+                      <h4 style={{fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0, flex: 1}}>{exp.title}</h4>
+                      <span style={{
+                        fontSize: '0.75rem', 
+                        fontWeight: 600, 
+                        color: 'white',
+                        background: 'var(--accent)',
+                        padding: '0.25rem 0.75rem',
+                        borderRadius: '20px',
+                        whiteSpace: 'nowrap',
+                        boxShadow: '0 2px 8px rgba(245,158,11,0.3)'
+                      }}>{exp.dateRange}</span>
                     </div>
-                    <div style={{fontSize: '0.85rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem'}}>{exp.organization}</div>
+                    <div style={{fontSize: '0.95rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <span style={{fontSize: '1rem'}}>🏢</span>
+                      {exp.organization}
+                    </div>
                     {exp.description && (
-                      <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0}}>
+                      <p style={{fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.7', margin: 0, flex: 1}}>
                         {exp.description}
                       </p>
                     )}
@@ -233,22 +350,83 @@ export default async function Home() {
           </div>
 
           {/* Academic Experience */}
-          <div style={{marginBottom: '2rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
-              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Academic Experience</h3>
-              <Link href="/experience" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
-            </div>
-            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+          <div style={{marginBottom: '3rem'}}>
+            <ScrollReveal delay={150}>
+              <div style={{
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '1rem', 
+                marginBottom: '1.5rem',
+                paddingBottom: '1rem',
+                borderBottom: '2px solid var(--primary)'
+              }}>
+                <div style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, var(--primary) 0%, #1e40af 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  boxShadow: '0 4px 12px rgba(30,58,138,0.2)'
+                }}>🎓</div>
+                <div style={{flex: 1}}>
+                  <h3 style={{fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Academic Experience</h3>
+                </div>
+                <Link href="/experience" style={{
+                  fontSize: '0.9rem', 
+                  fontWeight: 600, 
+                  color: 'var(--primary)', 
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '8px',
+                  transition: 'all 0.2s',
+                  background: 'white',
+                  border: '1px solid var(--border)'
+                }}>
+                  View All <span style={{fontSize: '1.1rem'}}>→</span>
+                </Link>
+              </div>
+            </ScrollReveal>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem'}}>
               {academicExperiences.map((exp, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={exp.id}>
-                  <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem', flexWrap: 'wrap', gap: '0.5rem'}}>
-                      <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0}}>{exp.title}</h4>
-                      <span style={{fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', whiteSpace: 'nowrap'}}>{exp.dateRange}</span>
+                  <div style={{
+                    padding: '1.75rem', 
+                    background: 'white', 
+                    borderRadius: '12px', 
+                    border: '1px solid var(--border)', 
+                    boxShadow: '0 4px 16px -4px rgba(0,0,0,0.08)', 
+                    transition: 'all 0.3s ease',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column'
+                  }}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem', gap: '1rem'}}>
+                      <h4 style={{fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: '1.3', margin: 0, flex: 1}}>{exp.title}</h4>
+                      <span style={{
+                        fontSize: '0.75rem', 
+                        fontWeight: 600, 
+                        color: 'white',
+                        background: 'var(--accent)',
+                        padding: '0.25rem 0.75rem',
+                        borderRadius: '20px',
+                        whiteSpace: 'nowrap',
+                        boxShadow: '0 2px 8px rgba(245,158,11,0.3)'
+                      }}>{exp.dateRange}</span>
                     </div>
-                    <div style={{fontSize: '0.85rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.5rem'}}>{exp.organization}</div>
+                    <div style={{fontSize: '0.95rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                      <span style={{fontSize: '1rem'}}>🏛️</span>
+                      {exp.organization}
+                    </div>
                     {exp.description && (
-                      <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0}}>
+                      <p style={{fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.7', margin: 0, flex: 1}}>
                         {exp.description}
                       </p>
                     )}
@@ -259,20 +437,69 @@ export default async function Home() {
           </div>
 
           {/* Publications */}
-          <div style={{marginBottom: '2rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
-              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Publications</h3>
-              <Link href="/papers" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
-            </div>
-            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+          <div style={{marginBottom: '3rem'}}>
+            <ScrollReveal delay={150}>
+              <div style={{
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '1rem', 
+                marginBottom: '1.5rem',
+                paddingBottom: '1rem',
+                borderBottom: '2px solid var(--primary)'
+              }}>
+                <div style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, var(--primary) 0%, #1e40af 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  boxShadow: '0 4px 12px rgba(30,58,138,0.2)'
+                }}>📚</div>
+                <div style={{flex: 1}}>
+                  <h3 style={{fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Publications</h3>
+                </div>
+                <Link href="/papers" style={{
+                  fontSize: '0.9rem', 
+                  fontWeight: 600, 
+                  color: 'var(--primary)', 
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '8px',
+                  transition: 'all 0.2s',
+                  background: 'white',
+                  border: '1px solid var(--border)'
+                }}>
+                  View All <span style={{fontSize: '1.1rem'}}>→</span>
+                </Link>
+              </div>
+            </ScrollReveal>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem'}}>
               {papers.map((pub, idx) => (
                 <ScrollReveal delay={(idx + 1) * 100} key={pub.id}>
-                  <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
-                    <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem', lineHeight: '1.4'}}>{pub.title}</h4>
-                    <div style={{fontSize: '0.85rem', color: 'var(--text-secondary)'}}>
-                      <span style={{fontWeight: 600, color: 'var(--primary)'}}>{pub.venue}</span>
-                      {pub.year && <span> • {pub.year}</span>}
-                      {pub.authors && <span style={{display: 'block', fontStyle: 'italic', marginTop: '0.3rem'}}>{pub.authors}</span>}
+                  <div style={{
+                    padding: '1.75rem', 
+                    background: 'white', 
+                    borderRadius: '12px', 
+                    border: '1px solid var(--border)', 
+                    boxShadow: '0 4px 16px -4px rgba(0,0,0,0.08)', 
+                    transition: 'all 0.3s ease',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column'
+                  }}>
+                    <h4 style={{fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.75rem', lineHeight: '1.5', flex: 1}}>{pub.title}</h4>
+                    <div style={{fontSize: '0.9rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border)', paddingTop: '0.75rem', marginTop: 'auto'}}>
+                      <div style={{fontWeight: 600, color: 'var(--primary)', marginBottom: '0.25rem'}}>{pub.venue}</div>
+                      {pub.year && <div style={{fontSize: '0.85rem', color: 'var(--accent)', fontWeight: 600}}>📅 {pub.year}</div>}
+                      {pub.authors && <div style={{fontSize: '0.85rem', fontStyle: 'italic', marginTop: '0.5rem', color: 'var(--text-light)'}}>{pub.authors}</div>}
                     </div>
                   </div>
                 </ScrollReveal>
@@ -280,43 +507,101 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* Awards */}
-          <div style={{marginBottom: '2rem'}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
-              <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Awards & Honors</h3>
-              <Link href="/certificates" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
-            </div>
-            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem'}}>
-              {awards.map((award, idx) => (
-                <ScrollReveal delay={(idx + 1) * 100} key={award.id}>
-                  <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', borderTop: '3px solid var(--accent)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
-                    <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.3'}}>{award.title}</h4>
-                    <p style={{fontSize: '0.8rem', color: 'var(--text-secondary)', margin: 0}}>
-                      {award.issuer && <span>{award.issuer}</span>}
-                      {award.year && <span> • {award.year}</span>}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-
-          {/* Projects & Books Side by Side */}
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem'}}>
+          {/* Awards, Projects & Books Grid */}
+          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem'}}>
             
+            {/* Awards */}
+            <div>
+              <ScrollReveal delay={150}>
+                <div style={{
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '0.75rem', 
+                  marginBottom: '1.5rem',
+                  paddingBottom: '1rem',
+                  borderBottom: '2px solid var(--accent)'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '10px',
+                    background: 'linear-gradient(135deg, var(--accent) 0%, #fb923c 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontSize: '1.25rem',
+                    boxShadow: '0 4px 12px rgba(245,158,11,0.3)'
+                  }}>🏆</div>
+                  <h3 style={{fontSize: '1.3rem', fontWeight: 700, color: 'var(--accent)', margin: 0, fontFamily: 'var(--font-serif)', flex: 1}}>Awards</h3>
+                  <Link href="/certificates" style={{fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent)', textDecoration: 'none'}}>View All →</Link>
+                </div>
+              </ScrollReveal>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+                {awards.map((award, idx) => (
+                  <ScrollReveal delay={(idx + 1) * 100} key={award.id}>
+                    <div style={{
+                      padding: '1.25rem', 
+                      background: 'white', 
+                      borderRadius: '10px', 
+                      border: '1px solid var(--border)',
+                      borderLeft: '4px solid var(--accent)',
+                      boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', 
+                      transition: 'all 0.2s ease'
+                    }}>
+                      <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem', lineHeight: '1.4'}}>{award.title}</h4>
+                      <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0}}>
+                        {award.issuer && <span>{award.issuer}</span>}
+                        {award.year && <span style={{color: 'var(--accent)', fontWeight: 600}}> • {award.year}</span>}
+                      </p>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+
             {/* Projects */}
             <div>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
-                <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Projects</h3>
-                <Link href="/projects" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
-              </div>
+              <ScrollReveal delay={150}>
+                <div style={{
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '0.75rem', 
+                  marginBottom: '1.5rem',
+                  paddingBottom: '1rem',
+                  borderBottom: '2px solid var(--primary)'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '10px',
+                    background: 'linear-gradient(135deg, var(--primary) 0%, #1e40af 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontSize: '1.25rem',
+                    boxShadow: '0 4px 12px rgba(30,58,138,0.2)'
+                  }}>💻</div>
+                  <h3 style={{fontSize: '1.3rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)', flex: 1}}>Projects</h3>
+                  <Link href="/projects" style={{fontSize: '0.85rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none'}}>View All →</Link>
+                </div>
+              </ScrollReveal>
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {projects.map((proj, idx) => (
                   <ScrollReveal delay={(idx + 1) * 100} key={proj.id}>
-                    <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
-                      <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.3'}}>{proj.title}</h4>
+                    <div style={{
+                      padding: '1.25rem', 
+                      background: 'white', 
+                      borderRadius: '10px', 
+                      border: '1px solid var(--border)',
+                      borderLeft: '4px solid var(--primary)',
+                      boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', 
+                      transition: 'all 0.2s ease'
+                    }}>
+                      <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem', lineHeight: '1.4'}}>{proj.title}</h4>
                       {proj.description && (
-                        <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>
+                        <p style={{fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>
                           {proj.description}
                         </p>
                       )}
@@ -328,20 +613,49 @@ export default async function Home() {
 
             {/* Books */}
             <div>
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--border)'}}>
-                <h3 style={{fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary)', margin: 0, fontFamily: 'var(--font-serif)'}}>Books</h3>
-                <Link href="/books" style={{fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', transition: 'color 0.2s'}}>View All →</Link>
-              </div>
+              <ScrollReveal delay={150}>
+                <div style={{
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '0.75rem', 
+                  marginBottom: '1.5rem',
+                  paddingBottom: '1rem',
+                  borderBottom: '2px solid #059669'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '10px',
+                    background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontSize: '1.25rem',
+                    boxShadow: '0 4px 12px rgba(5,150,105,0.3)'
+                  }}>📖</div>
+                  <h3 style={{fontSize: '1.3rem', fontWeight: 700, color: '#059669', margin: 0, fontFamily: 'var(--font-serif)', flex: 1}}>Books</h3>
+                  <Link href="/books" style={{fontSize: '0.85rem', fontWeight: 600, color: '#059669', textDecoration: 'none'}}>View All →</Link>
+                </div>
+              </ScrollReveal>
               <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                 {books.map((book, idx) => (
                   <ScrollReveal delay={(idx + 1) * 100} key={book.id}>
-                    <div style={{padding: '1.2rem', background: 'white', borderRadius: 'var(--radius)', border: '1px solid var(--border)', boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', transition: 'all 0.2s ease'}}>
-                      <h4 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.3'}}>{book.title}</h4>
-                      <p style={{fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.4rem'}}>
+                    <div style={{
+                      padding: '1.25rem', 
+                      background: 'white', 
+                      borderRadius: '10px', 
+                      border: '1px solid var(--border)',
+                      borderLeft: '4px solid #059669',
+                      boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)', 
+                      transition: 'all 0.2s ease'
+                    }}>
+                      <h4 style={{fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem', lineHeight: '1.4'}}>{book.title}</h4>
+                      <p style={{fontSize: '0.85rem', color: '#059669', fontWeight: 600, marginBottom: '0.5rem'}}>
                         {book.publisher && `${book.publisher} • `}{book.year}
                       </p>
                       {book.description && (
-                        <p style={{fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0}}>
+                        <p style={{fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6', margin: 0}}>
                           {book.description}
                         </p>
                       )}

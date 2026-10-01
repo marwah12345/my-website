@@ -200,6 +200,21 @@
   .grid-2, .grid-3 {
     grid-template-columns: 1fr;
   }
+  
+  /* About Me Section Mobile */
+  section[style*="paddingTop: '4rem'"] > div > div > div[style*="padding: '3rem'"] {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  /* Latest Highlights Section Mobile */
+  section[style*="paddingTop: '4rem'"] h2 {
+    font-size: 2rem !important;
+  }
+  
+  /* Section headers mobile */
+  section[style*="paddingTop: '4rem'"] h3 {
+    font-size: 1.2rem !important;
+  }
 }
 
 /* Social Pill Links */
