@@ -49,13 +49,13 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.com',
+    url: 'https://www.marwahalhelali.online',
     siteName: 'Dr. Marwah Al-Helali Portfolio',
     title: 'Dr. Marwah Al-Helali | AI Researcher & Deep Learning Expert',
     description: 'PhD Researcher in Artificial Intelligence and Deep Learning, specializing in machine learning and intelligent systems.',
     images: [
       {
-        url: '/uploads/profile.jpeg',
+        url: 'https://www.marwahalhelali.online/uploads/profile.jpeg',
         width: 1200,
         height: 630,
         alt: 'Dr. Marwah Al-Helali',
@@ -66,7 +66,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Dr. Marwah Al-Helali | AI Researcher',
     description: 'PhD Researcher in AI and Deep Learning',
-    images: ['/uploads/profile.jpeg'],
+    images: ['https://www.marwahalhelali.online/uploads/profile.jpeg'],
   },
   verification: {
     google: 'your-google-verification-code', // Add your Google verification code
@@ -80,8 +80,8 @@ export default function RootLayout({ children }) {
     "name": "Dr. Marwah Al-Helali",
     "jobTitle": "PhD Researcher",
     "description": "PhD Researcher in Artificial Intelligence and Deep Learning",
-    "url": "https://your-domain.com",
-    "image": "https://your-domain.com/uploads/profile.jpeg",
+    "url": "https://www.marwahalhelali.online",
+    "image": "https://www.marwahalhelali.online/uploads/profile.jpeg",
     "sameAs": [
       "https://www.linkedin.com/in/marwah-al-helali-a3bb05243/",
       "https://scholar.google.com/citations?user=hlIQz8IAAAAJ&hl=en",

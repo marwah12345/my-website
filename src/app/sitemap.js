@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://your-domain.com'; // Replace with your actual domain
+  const baseUrl = 'https://www.marwahalhelali.online';
 
   return [
     {
