@@ -4,19 +4,7 @@ import Image from "next/image";
 export default async function BooksPage() {
   const books = await db.book.findMany({ orderBy: { year: 'desc' } });
 
-  // Map book titles to image paths
-  const getImagePath = (title) => {
-    const imageMap = {
-      'An Adaptive Model for Unmasking Zero-Day Threats Using Federated Learning': '/uploads/An Adaptive Model for Unmasking Zero-Day Threats Using Federated Learning.png',
-      'Deep Architectural Classification for Heart Disease Prediction': '/uploads/Deep-Architectural-Classification-for-Heart-Disease-Prediction.png'
-    };
-    return imageMap[title] || null;
-  };
-
-  const BookRow = ({ book }) => {
-    const imagePath = getImagePath(book.title);
-    
-    return (
+  const BookRow = ({ book }) => (
     <div style={{
       padding: '1.2rem',
       background: 'white',
@@ -28,13 +16,25 @@ export default async function BooksPage() {
       marginBottom: '0.75rem'
     }}>
       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap'}}>
-        {imagePath && (
-          <div style={{width: '140px', height: '100px', position: 'relative', borderRadius: '4px', overflow: 'hidden', flexShrink: 0}}>
+        {book.coverImage && (
+          <div style={{
+            width: '60px',
+            height: '60px',
+            flexShrink: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#f8fafc',
+            borderRadius: '6px',
+            padding: '0.5rem',
+            border: '1px solid var(--border)'
+          }}>
             <Image 
-              src={imagePath}
+              src={book.coverImage} 
               alt={book.title}
-              fill
-              style={{objectFit: 'cover'}}
+              width={60}
+              height={60}
+              style={{width: '100%', height: '100%', objectFit: 'contain'}}
             />
           </div>
         )}
@@ -106,8 +106,7 @@ export default async function BooksPage() {
         </div>
       </div>
     </div>
-    );
-  };
+  );
 
   return (
     <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fafafa'}}>

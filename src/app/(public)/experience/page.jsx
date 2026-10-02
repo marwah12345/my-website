@@ -7,59 +7,61 @@ export default async function ExperiencePage() {
   const research = experiences.filter(e => e.type === 'research');
   const work = experiences.filter(e => e.type === 'work');
 
-  // Map organization names to image paths
-  const getImagePath = (organization) => {
-    const imageMap = {
-      'Aonic': '/uploads/Aonic.png',
-      'Breakthrough Academy': '/uploads/Breakthrough Academy.png',
-      'IMAS International School': '/uploads/IMAS International School.png'
-    };
-    return imageMap[organization] || null;
-  };
-
-  const ExperienceCard = ({ exp, color = 'var(--accent)' }) => {
-    const imagePath = getImagePath(exp.organization);
-    
-    return (
-      <div style={{
-        padding: '1rem',
-        background: 'white',
-        borderRadius: '6px',
-        border: '1px solid var(--border)',
-        borderLeft: `3px solid ${color}`,
-        boxShadow: '0 2px 6px -2px rgba(0,0,0,0.06)',
-        transition: 'all 0.2s ease',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column'
-      }}>
-        {imagePath && (
-          <div style={{marginBottom: '0.75rem', width: '100%', height: '120px', position: 'relative', borderRadius: '4px', overflow: 'hidden'}}>
+  const ExperienceCard = ({ exp, color = 'var(--accent)' }) => (
+    <div style={{
+      padding: '1rem',
+      background: 'white',
+      borderRadius: '6px',
+      border: '1px solid var(--border)',
+      borderLeft: `3px solid ${color}`,
+      boxShadow: '0 2px 6px -2px rgba(0,0,0,0.06)',
+      transition: 'all 0.2s ease',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      <div style={{fontSize: '0.7rem', fontWeight: 600, color: '#64748b', letterSpacing: '0.3px', marginBottom: '0.4rem'}}>
+        {exp.dateRange || 'Ongoing'}
+      </div>
+      <div style={{display: 'flex', gap: '0.75rem', alignItems: 'flex-start', marginBottom: '0.6rem'}}>
+        {exp.image && (
+          <div style={{
+            width: '48px',
+            height: '48px',
+            flexShrink: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#f8fafc',
+            borderRadius: '6px',
+            padding: '0.4rem',
+            border: '1px solid var(--border)'
+          }}>
             <Image 
-              src={imagePath}
+              src={exp.image} 
               alt={exp.organization}
-              fill
-              style={{objectFit: 'cover'}}
+              width={48}
+              height={48}
+              style={{width: '100%', height: '100%', objectFit: 'contain'}}
             />
           </div>
         )}
-        <div style={{fontSize: '0.7rem', fontWeight: 600, color: '#64748b', letterSpacing: '0.3px', marginBottom: '0.4rem'}}>
-          {exp.dateRange || 'Ongoing'}
+        <div style={{flex: 1}}>
+          <h3 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.35rem', lineHeight: '1.3'}}>
+            {exp.title}
+          </h3>
+          <div style={{fontSize: '0.82rem', color: color, fontWeight: 600}}>
+            {exp.organization}
+          </div>
         </div>
-        <h3 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.35rem', lineHeight: '1.3'}}>
-          {exp.title}
-        </h3>
-        <div style={{fontSize: '0.82rem', color: color, fontWeight: 600, marginBottom: '0.6rem'}}>
-          {exp.organization}
-        </div>
-        {exp.description && (
-          <p style={{fontSize: '0.85rem', lineHeight: '1.6', color: 'var(--text-secondary)', margin: 0, flex: 1}}>
-            {exp.description}
-          </p>
-        )}
       </div>
-    );
-  };
+      {exp.description && (
+        <p style={{fontSize: '0.85rem', lineHeight: '1.6', color: 'var(--text-secondary)', margin: 0, flex: 1}}>
+          {exp.description}
+        </p>
+      )}
+    </div>
+  );
 
   return (
     <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fafafa'}}>
