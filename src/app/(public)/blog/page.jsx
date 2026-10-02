@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
-import ScrollReveal from "@/components/ScrollReveal";
 
 export default async function BlogParamsPage() {
   const posts = await db.blogPost.findMany({
@@ -8,72 +7,74 @@ export default async function BlogParamsPage() {
   });
 
   return (
-    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
-      {/* Magazine Header */}
+    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fafafa'}}>
+      {/* Simple Header */}
       <div style={{
         background: 'white',
-        padding: '6rem 0 3rem',
+        padding: '2rem 0 1.5rem',
         borderBottom: '1px solid var(--border)'
       }}>
         <div className="container text-center">
-          <ScrollReveal delay={100}>
-            <h1 style={{fontSize: '4rem', margin: '0', color: 'var(--primary)', fontFamily: 'var(--font-serif)', letterSpacing: '-1px'}}>The Record.</h1>
-            <p style={{marginTop: '1rem', fontSize: '1.2rem', maxWidth: '600px', margin: '0.5rem auto 0', color: 'var(--text-secondary)'}}>
-              Thoughts, articles, and updates on AI medical research.
-            </p>
-          </ScrollReveal>
+          <h1 style={{fontSize: '1.8rem', margin: '0', color: 'var(--primary)', fontWeight: 600}}>Blog</h1>
         </div>
       </div>
 
-      <div className="container" style={{paddingTop: '5rem', paddingBottom: '6rem', flex: 1}}>
+      <div className="container" style={{paddingTop: '2rem', paddingBottom: '3rem', flex: 1, maxWidth: '1100px'}}>
         {posts.length === 0 ? (
           <p className="text-center text-secondary">No blog posts found.</p>
         ) : (
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-            gap: '3rem'
+            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+            gap: '1rem'
           }}>
-            {posts.map((post, index) => (
-              <ScrollReveal delay={(index % 3) * 150 + 100} key={post.id} styleClass={index === 0 ? "featured-post" : ""}>
-                <div style={{
-                  gridColumn: index === 0 ? '1 / -1' : 'auto',
-                  display: 'flex',
-                  flexDirection: index === 0 ? 'row' : 'column',
-                  gap: index === 0 ? '3rem' : '1.5rem',
-                  paddingBottom: '2rem',
-                  borderBottom: '1px solid var(--border)',
-                  height: '100%'
-                }} className={index === 0 ? "featured-wrapper" : ""}>
-                  
-                  {index === 0 && post.image && (
-                    <div style={{flex: '0 0 50%', minHeight: '350px', background: `url(${post.image}) no-repeat center center / cover`, borderRadius: 'var(--radius)'}}></div>
-                  )}
-
-                  <div style={{flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                    <div style={{color: 'var(--accent)', fontWeight: 'bold', fontSize: '0.9rem', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.5rem'}}>
-                      {new Date(post.createdAt).toLocaleDateString("en-US", { month: 'long', day: 'numeric', year: 'numeric' })}
-                    </div>
-                    <Link href={`/blog/${post.slug}`} style={{color: 'var(--text-primary)'}}>
-                      <h2 style={{
-                        fontSize: index === 0 ? '2.8rem' : '1.6rem', 
-                        fontFamily: 'var(--font-serif)', 
-                        lineHeight: 1.2, 
-                        marginBottom: '1rem',
-                        transition: 'color 0.2s ease'
-                      }} className="hover:text-primary">
-                        {post.title}
-                      </h2>
-                    </Link>
-                    <div style={{color: 'var(--text-secondary)', fontSize: index === 0 ? '1.15rem' : '1rem', lineHeight: 1.6, marginBottom: '1.5rem'}}>
-                      {post.content.substring(0, index === 0 ? 300 : 120)}...
-                    </div>
-                    <div style={{marginTop: 'auto'}}>
-                      <Link href={`/blog/${post.slug}`} style={{fontWeight: 'bold', letterSpacing: '1px', fontSize: '0.9rem'}}>Read Story &rarr;</Link>
-                    </div>
+            {posts.map((post) => (
+              <div key={post.id} style={{
+                background: 'white',
+                borderRadius: '6px',
+                border: '1px solid var(--border)',
+                boxShadow: '0 2px 6px -2px rgba(0,0,0,0.06)',
+                overflow: 'hidden',
+                transition: 'all 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
+                {post.image && (
+                  <div style={{
+                    width: '100%',
+                    height: '180px',
+                    background: `url(${post.image}) no-repeat center center / cover`
+                  }}></div>
+                )}
+                
+                <div style={{padding: '1.2rem', flex: 1, display: 'flex', flexDirection: 'column'}}>
+                  <div style={{color: 'var(--accent)', fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.5px', marginBottom: '0.5rem'}}>
+                    {new Date(post.createdAt).toLocaleDateString("en-US", { month: 'short', day: 'numeric', year: 'numeric' })}
+                  </div>
+                  <Link href={`/blog/${post.slug}`} style={{color: 'var(--text-primary)', textDecoration: 'none'}}>
+                    <h2 style={{
+                      fontSize: '1.1rem', 
+                      fontWeight: 600,
+                      lineHeight: 1.3, 
+                      marginBottom: '0.75rem',
+                      color: 'var(--primary)'
+                    }}>
+                      {post.title}
+                    </h2>
+                  </Link>
+                  <div style={{color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1rem', flex: 1}}>
+                    {post.content.substring(0, 120)}...
+                  </div>
+                  <div>
+                    <Link href={`/blog/${post.slug}`} style={{
+                      color: 'var(--primary)',
+                      fontWeight: 600,
+                      fontSize: '0.85rem',
+                      textDecoration: 'none'
+                    }}>Read More →</Link>
                   </div>
                 </div>
-              </ScrollReveal>
+              </div>
             ))}
           </div>
         )}

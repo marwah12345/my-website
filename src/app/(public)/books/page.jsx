@@ -94,7 +94,7 @@ export default async function BooksPage() {
         borderBottom: '1px solid var(--border)'
       }}>
         <div className="container text-center">
-          <h1 style={{fontSize: '1.8rem', margin: '0', color: 'var(--primary)', fontWeight: 600}}>Authored Textbooks</h1>
+          <h1 style={{fontSize: '1.8rem', margin: '0', color: 'var(--primary)', fontWeight: 600}}>Book Chapters</h1>
         </div>
       </div>
 

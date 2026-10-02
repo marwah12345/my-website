@@ -33,6 +33,7 @@ model Book {
   title         String
   publisher     String?
   year          Int?
+  doi           String?
   link          String?
   coverImage    String?
   description   String?
@@ -84,6 +85,7 @@ model Project {
   title         String
   description   String?
   image         String?
+  video         String?
   link          String?
   githubLink    String?
   youtubeLink   String?
