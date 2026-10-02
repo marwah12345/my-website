@@ -21,16 +21,19 @@ export default function Navbar() {
         
         {/* Hamburger Button */}
         <button 
+          type="button"
           className={`hamburger ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <nav className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+        <nav id="primary-navigation" className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <Link href="/" className={pathname === "/" ? "active" : ""} onClick={closeMenu}>
             Home
           </Link>

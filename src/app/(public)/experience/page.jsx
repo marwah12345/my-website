@@ -7,80 +7,107 @@ export default async function ExperiencePage() {
   const research = experiences.filter(e => e.type === 'research');
   const work = experiences.filter(e => e.type === 'work');
 
+  const ExperienceCard = ({ exp, color = 'var(--accent)' }) => (
+    <div style={{
+      padding: '1.25rem',
+      background: 'white',
+      borderRadius: '8px',
+      border: '1px solid var(--border)',
+      borderLeft: `4px solid ${color}`,
+      boxShadow: '0 2px 8px -2px rgba(0,0,0,0.08)',
+      transition: 'all 0.2s ease',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      <div style={{fontSize: '0.75rem', fontWeight: 600, color: '#64748b', letterSpacing: '0.5px', marginBottom: '0.5rem'}}>
+        {exp.dateRange || 'Ongoing'}
+      </div>
+      <h3 style={{fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.3'}}>
+        {exp.title}
+      </h3>
+      <div style={{fontSize: '0.9rem', color: color, fontWeight: 600, marginBottom: '0.75rem'}}>
+        {exp.organization}
+      </div>
+      {exp.description && (
+        <p style={{fontSize: '0.9rem', lineHeight: '1.6', color: 'var(--text-secondary)', margin: 0, flex: 1}}>
+          {exp.description}
+        </p>
+      )}
+    </div>
+  );
+
   return (
     <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
       {/* Mini-Hero */}
       <div style={{
         background: 'var(--bg-secondary)',
-        padding: '6rem 0 4rem',
+        padding: '5rem 0 3rem',
         borderBottom: '1px solid var(--border)'
       }}>
         <div className="container text-center">
           <ScrollReveal delay={100}>
-            <h1 style={{fontSize: '3rem', margin: '0', color: 'var(--primary)'}}>Professional Timeline</h1>
-            <p style={{marginTop: '1rem', fontSize: '1.2rem', maxWidth: '600px', margin: '1rem auto 0', color: 'var(--text-secondary)'}}>
-              A chronological history of my clinical AI research involvements and full-stack software development roles.
+            <h1 style={{fontSize: '2.5rem', margin: '0', color: 'var(--primary)'}}>Professional Timeline</h1>
+            <p style={{marginTop: '1rem', fontSize: '1.1rem', maxWidth: '600px', margin: '1rem auto 0', color: 'var(--text-secondary)'}}>
+              A chronological history of my clinical AI research and full-stack software development roles
             </p>
           </ScrollReveal>
         </div>
       </div>
 
-      <div className="container" style={{paddingTop: '6rem', paddingBottom: '6rem', flex: 1, maxWidth: '900px'}}>
+      <div className="container" style={{paddingTop: '3rem', paddingBottom: '5rem', flex: 1, maxWidth: '1200px'}}>
         
-        {/* RESEARCH EXPERIENCE TIMELINE */}
-        <ScrollReveal delay={150}>
-           <h2 style={{borderLeft: '4px solid var(--accent)', paddingLeft: '1rem', marginBottom: '3rem', fontSize: '2rem'}}>Research Experience</h2>
-        </ScrollReveal>
-        <div style={{display: 'flex', flexDirection: 'column', gap: '3rem', marginLeft: '1rem', marginBottom: '6rem'}}>
-          {research.map((exp, idx) => (
-            <ScrollReveal delay={idx * 150 + 200} key={exp.id}>
-              <div style={{
-                 position: 'relative',
-                 paddingLeft: '3rem',
-                 borderLeft: '2px solid var(--accent)',
-                 paddingBottom: idx === research.length - 1 ? '0' : '2rem'
-              }}>
-                <div style={{
-                  position: 'absolute', left: '-8px', top: '4px', width: '14px', height: '14px',
-                  borderRadius: '50%', background: 'var(--bg-primary)', border: '4px solid var(--accent)'
-                }}></div>
-                <div style={{fontWeight: '700', color: 'var(--accent)', letterSpacing: '1px', marginBottom: '0.5rem', fontSize: '0.9rem'}}>{exp.dateRange || 'Ongoing'}</div>
-                <h3 style={{fontSize: '1.6rem', marginBottom: '0.3rem', color: 'var(--text-primary)'}}>{exp.title}</h3>
-                <div style={{fontFamily: 'var(--font-serif)', color: 'var(--primary)', fontSize: '1.15rem', marginBottom: '1rem'}}>{exp.organization}</div>
-                <p style={{fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-secondary)'}}>{exp.description}</p>
-              </div>
+        {/* RESEARCH EXPERIENCE */}
+        {research.length > 0 && (
+          <div style={{marginBottom: '4rem'}}>
+            <ScrollReveal delay={100}>
+              <h2 style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: '1.8rem',
+                color: 'var(--primary)',
+                marginBottom: '1.5rem',
+                paddingLeft: '1rem',
+                borderLeft: '4px solid var(--accent)'
+              }}>Research Experience</h2>
             </ScrollReveal>
-          ))}
-          {research.length === 0 && <p>No research experience found.</p>}
-        </div>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.25rem'}}>
+              {research.map((exp, idx) => (
+                <ScrollReveal delay={idx * 100 + 150} key={exp.id}>
+                  <ExperienceCard exp={exp} color="var(--accent)" />
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        )}
 
-        {/* WORK EXPERIENCE TIMELINE */}
-        <ScrollReveal delay={150}>
-           <h2 style={{borderLeft: '4px solid var(--primary)', paddingLeft: '1rem', marginBottom: '3rem', fontSize: '2rem'}}>Work Experience</h2>
-        </ScrollReveal>
-        <div style={{display: 'flex', flexDirection: 'column', gap: '3rem', marginLeft: '1rem'}}>
-          {work.map((exp, idx) => (
-            <ScrollReveal delay={idx * 150 + 200} key={exp.id}>
-              <div style={{
-                 position: 'relative',
-                 paddingLeft: '3rem',
-                 borderLeft: '2px solid var(--primary)',
-                 paddingBottom: idx === work.length - 1 ? '0' : '2rem'
-              }}>
-                <div style={{
-                  position: 'absolute', left: '-8px', top: '4px', width: '14px', height: '14px',
-                  borderRadius: '50%', background: 'var(--bg-primary)', border: '4px solid var(--primary)'
-                }}></div>
-                <div style={{fontWeight: '700', color: 'var(--primary)', letterSpacing: '1px', marginBottom: '0.5rem', fontSize: '0.9rem'}}>{exp.dateRange || 'Ongoing'}</div>
-                <h3 style={{fontSize: '1.6rem', marginBottom: '0.3rem', color: 'var(--text-primary)'}}>{exp.title}</h3>
-                <div style={{fontFamily: 'var(--font-serif)', color: 'var(--text-secondary)', fontSize: '1.15rem', marginBottom: '1rem'}}>{exp.organization}</div>
-                <p style={{fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-secondary)'}}>{exp.description}</p>
-              </div>
+        {/* WORK EXPERIENCE */}
+        {work.length > 0 && (
+          <div>
+            <ScrollReveal delay={100}>
+              <h2 style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: '1.8rem',
+                color: 'var(--primary)',
+                marginBottom: '1.5rem',
+                paddingLeft: '1rem',
+                borderLeft: '4px solid var(--primary)'
+              }}>Work Experience</h2>
             </ScrollReveal>
-          ))}
-          {work.length === 0 && <p>No work experience found.</p>}
-        </div>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.25rem'}}>
+              {work.map((exp, idx) => (
+                <ScrollReveal delay={idx * 100 + 150} key={exp.id}>
+                  <ExperienceCard exp={exp} color="var(--primary)" />
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        )}
 
+        {experiences.length === 0 && (
+          <p className="text-center" style={{marginTop: '2rem', color: 'var(--text-secondary)'}}>
+            No experience found.
+          </p>
+        )}
       </div>
     </div>
   );
