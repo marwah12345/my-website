@@ -1,5 +1,4 @@
 import { db } from "@/lib/db";
-import ScrollReveal from "@/components/ScrollReveal";
 import ProjectCard from "@/components/ProjectCard";
 
 export const metadata = {
@@ -11,48 +10,40 @@ export default async function ProjectsPage() {
   const projects = await db.project.findMany({ orderBy: { createdAt: 'desc' } });
 
   return (
-    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
-      {/* Hero Header */}
+    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fafafa'}}>
+      {/* Simple Header */}
       <div style={{
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)',
-        padding: '5rem 0 3rem',
-        color: 'white',
-        boxShadow: 'inset 0 -10px 20px -10px rgba(0,0,0,0.5)'
+        background: 'white',
+        padding: '2rem 0 1.5rem',
+        borderBottom: '1px solid var(--border)'
       }}>
         <div className="container text-center">
-          <ScrollReveal delay={100}>
-            <h1 style={{fontSize: '2.5rem', margin: '0', textShadow: '0 2px 5px rgba(0,0,0,0.3)'}}>Projects</h1>
-            <p style={{marginTop: '1rem', opacity: 0.9, fontSize: '1.1rem', maxWidth: '700px', margin: '1rem auto 0'}}>
-              A comprehensive showcase of my AI research tools, deep learning systems, and software development work — from prototype to deployment
-            </p>
-          </ScrollReveal>
+          <h1 style={{fontSize: '1.8rem', margin: '0', color: 'var(--primary)', fontWeight: 600}}>Projects</h1>
         </div>
       </div>
 
       {/* Cards Grid */}
-      <div className="container" style={{ paddingBottom: '5rem', paddingTop: '3rem', flex: 1 }}>
+      <div className="container" style={{ paddingBottom: '3rem', paddingTop: '2rem', flex: 1, maxWidth: '1100px' }}>
         {projects.length === 0 ? (
           <div style={{
             textAlign: 'center',
-            padding: '4rem 2rem',
-            background: 'var(--bg-secondary)',
-            borderRadius: '12px',
+            padding: '3rem 2rem',
+            background: 'white',
+            borderRadius: '8px',
             border: '1px solid var(--border)'
           }}>
-            <div style={{fontSize: '3rem', marginBottom: '1rem'}}>🚀</div>
-            <h3 style={{fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: '0.5rem'}}>No projects yet</h3>
-            <p style={{color: 'var(--text-secondary)'}}>Projects will appear here once added from the admin panel.</p>
+            <div style={{fontSize: '2.5rem', marginBottom: '0.75rem'}}>🚀</div>
+            <h3 style={{fontSize: '1.2rem', color: 'var(--text-primary)', marginBottom: '0.4rem'}}>No projects yet</h3>
+            <p style={{color: 'var(--text-secondary)', fontSize: '0.9rem'}}>Projects will appear here once added from the admin panel.</p>
           </div>
         ) : (
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '1.5rem'
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '1rem'
           }}>
-            {projects.map((proj, idx) => (
-              <ScrollReveal delay={(idx % 3) * 100 + 100} key={proj.id}>
-                <ProjectCard project={proj} />
-              </ScrollReveal>
+            {projects.map((proj) => (
+              <ProjectCard project={proj} key={proj.id} />
             ))}
           </div>
         )}

@@ -2,11 +2,16 @@
 .hero {
   min-height: 90vh;
   padding: 8rem 0;
+  background: url('/uploads/mri.png') no-repeat center center / cover;
+  position: relative;
+}
+
+.hero .container {
   display: flex;
   align-items: center;
   gap: 6rem;
-  background: url('/uploads/mri.png') no-repeat center center / cover;
-  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Adds a dark sleek glassmorphism overlay to hero to make text readable over the background image */
@@ -145,6 +150,11 @@
     gap: 2rem;
   }
 
+  .hero .container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .hero-content {
     width: min(100%, 620px);
     padding: 0 1rem;
@@ -204,6 +214,12 @@
     text-align: center;
   }
 
+  .hero .container {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
   .hero-content {
     width: 100%;
     padding: 0 0.85rem;
@@ -221,6 +237,7 @@
   .hero-image-wrapper {
     width: min(58vw, 200px);
     height: min(58vw, 200px);
+    margin-bottom: 1.5rem !important;
   }
 
   .hero-image {
@@ -233,6 +250,7 @@
     width: 100%;
     gap: 0.5rem !important;
     margin-top: 1rem !important;
+    justify-content: center !important;
   }
 
   .social-pill {

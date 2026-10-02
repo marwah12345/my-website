@@ -1,122 +1,72 @@
 import { db } from "@/lib/db";
-import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
 
 export default async function CertificatesPage() {
   const awards = await db.award.findMany({ orderBy: { year: 'desc' } });
-  
-  const academicCerts = await db.certificate.findMany({ where: { type: 'academic' }, orderBy: { year: 'desc' } });
-  const communityCerts = await db.certificate.findMany({ where: { type: 'community' }, orderBy: { year: 'desc' } });
-  
   const volunteers = await db.experience.findMany({ where: { type: 'volunteer' }, orderBy: { id: 'asc' } });
 
   return (
-    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
-      {/* Mini-Hero */}
+    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fafafa'}}>
+      {/* Simple Header */}
       <div style={{
-        background: 'linear-gradient(135deg, var(--accent) 0%, #d97706 100%)',
-        padding: '6rem 0 4rem',
-        color: 'white',
+        background: 'white',
+        padding: '2rem 0 1.5rem',
         borderBottom: '1px solid var(--border)'
       }}>
         <div className="container text-center">
-          <ScrollReveal delay={100}>
-            <h1 style={{fontSize: '3rem', margin: '0', textShadow: '0 2px 4px rgba(0,0,0,0.2)'}}>Honours & Impact</h1>
-            <p style={{marginTop: '1rem', fontSize: '1.2rem', maxWidth: '600px', margin: '1rem auto 0', textShadow: '0 1px 2px rgba(0,0,0,0.1)'}}>
-              A collection of my formal academic awards, significant certifications, and community service participations.
-            </p>
-          </ScrollReveal>
+          <h1 style={{fontSize: '1.8rem', margin: '0', color: 'var(--primary)', fontWeight: 600}}>Honours & Impact</h1>
         </div>
       </div>
 
-      <div className="container" style={{paddingTop: '6rem', paddingBottom: '6rem', flex: 1}}>
-        <div className="grid-2" style={{gap: '4rem'}}>
+      <div className="container" style={{paddingTop: '2rem', paddingBottom: '3rem', flex: 1, maxWidth: '1100px'}}>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
           
           {/* AWARDS COLUMN */}
           <div>
-            <ScrollReveal delay={100}>
-              <h2 className="mb-4" style={{color: 'var(--primary)', borderBottom: '2px solid var(--accent)', paddingBottom: '0.8rem', display: 'inline-block'}}>Honours & Awards</h2>
-            </ScrollReveal>
-            <div className="grid-1 gap-4">
-              {awards.map((award, idx) => (
-                <ScrollReveal delay={idx * 150 + 200} key={award.id}>
-                  <div className="card" style={{
-                    padding: '1.5rem',
-                    boxShadow: '0 10px 25px -5px rgba(0,0,0,0.05)',
-                    borderLeft: '4px solid var(--accent)'
-                  }}>
-                    <h4 style={{fontSize: '1.3rem', marginBottom: '0.5rem', color: 'var(--text-primary)'}}>{award.title}</h4>
-                    <p className="text-secondary font-bold" style={{fontSize: '0.95rem'}}>{award.issuer && `${award.issuer} • `}<span style={{color: 'var(--primary)'}}>{award.year}</span></p>
-                  </div>
-                </ScrollReveal>
+            <h2 className="mb-4" style={{color: 'var(--primary)', borderBottom: '2px solid var(--accent)', paddingBottom: '0.6rem', fontSize: '1.3rem', fontWeight: 600}}>Honours & Awards</h2>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.75rem'}}>
+              {awards.map((award) => (
+                <div key={award.id} style={{
+                  padding: '1rem',
+                  background: 'white',
+                  borderRadius: '6px',
+                  border: '1px solid var(--border)',
+                  boxShadow: '0 2px 6px -2px rgba(0,0,0,0.06)',
+                  borderLeft: '3px solid var(--accent)'
+                }}>
+                  <h4 style={{fontSize: '0.95rem', marginBottom: '0.4rem', color: 'var(--text-primary)', fontWeight: 600}}>{award.title}</h4>
+                  <p className="text-secondary font-bold" style={{fontSize: '0.82rem', margin: 0}}>
+                    {award.issuer && `${award.issuer} • `}<span style={{color: 'var(--primary)'}}>{award.year}</span>
+                  </p>
+                </div>
               ))}
-              {awards.length === 0 && <p>No awards found.</p>}
+              {awards.length === 0 && <p style={{color: 'var(--text-secondary)', fontSize: '0.9rem'}}>No awards found.</p>}
             </div>
           </div>
 
           {/* VOLUNTEER COLUMN */}
           <div>
-            <ScrollReveal delay={100}>
-              <h2 className="mb-4" style={{color: 'var(--primary)', borderBottom: '2px solid var(--primary)', paddingBottom: '0.8rem', display: 'inline-block'}}>Volunteer & Community</h2>
-            </ScrollReveal>
-            <div className="grid-1 gap-4">
-              {volunteers.map((vol, idx) => (
-                <ScrollReveal delay={idx * 150 + 200} key={vol.id}>
-                  <div className="card" style={{
-                    padding: '1.5rem',
-                    borderLeft: '4px solid var(--primary)',
-                    boxShadow: '0 10px 25px -5px rgba(0,0,0,0.05)'
-                  }}>
-                    <div style={{color: 'var(--primary)', fontWeight: 'bold', fontSize: '0.85rem', marginBottom: '0.3rem'}}>{vol.dateRange}</div>
-                    <h3 style={{fontSize: '1.25rem', marginBottom: '0.2rem'}}>{vol.title}</h3>
-                    <h4 className="text-secondary" style={{fontWeight: 500, fontFamily: 'var(--font-serif)'}}>{vol.organization}</h4>
-                  </div>
-                </ScrollReveal>
+            <h2 className="mb-4" style={{color: 'var(--primary)', borderBottom: '2px solid var(--primary)', paddingBottom: '0.6rem', fontSize: '1.3rem', fontWeight: 600}}>Volunteer & Community</h2>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.75rem'}}>
+              {volunteers.map((vol) => (
+                <div key={vol.id} style={{
+                  padding: '1rem',
+                  background: 'white',
+                  borderRadius: '6px',
+                  border: '1px solid var(--border)',
+                  borderLeft: '3px solid var(--primary)',
+                  boxShadow: '0 2px 6px -2px rgba(0,0,0,0.06)'
+                }}>
+                  <div style={{color: 'var(--primary)', fontWeight: 'bold', fontSize: '0.75rem', marginBottom: '0.3rem'}}>{vol.dateRange}</div>
+                  <h3 style={{fontSize: '0.95rem', marginBottom: '0.2rem', fontWeight: 600}}>{vol.title}</h3>
+                  <h4 className="text-secondary" style={{fontWeight: 500, fontFamily: 'var(--font-serif)', fontSize: '0.85rem', margin: 0}}>{vol.organization}</h4>
+                </div>
               ))}
-              {volunteers.length === 0 && <p>No community work found.</p>}
+              {volunteers.length === 0 && <p style={{color: 'var(--text-secondary)', fontSize: '0.9rem'}}>No community work found.</p>}
             </div>
           </div>
           
         </div>
-
-        {/* FORMAL CERTS SECTION */}
-        <div style={{marginTop: '6rem', paddingTop: '4rem', borderTop: '1px solid var(--border)'}}>
-           <ScrollReveal delay={100} styleClass="text-center mb-4">
-              <h2 className="mb-4" style={{color: 'var(--primary)'}}>Formal Certificates</h2>
-           </ScrollReveal>
-           <div className="grid-2" style={{gap: '3rem'}}>
-              <div>
-                <ScrollReveal delay={200}><h3 className="mb-3 text-center" style={{fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)'}}>Academic Certificates</h3></ScrollReveal>
-                <div className="grid-1 gap-3">
-                  {academicCerts.map((cert, idx) => (
-                    <ScrollReveal delay={idx * 150 + 300} key={cert.id}>
-                      <div className="card" style={{padding: '1.5rem'}}>
-                        <h4 style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>{cert.name}</h4>
-                        <p className="text-secondary text-sm">{cert.issuer} &bull; {cert.year}</p>
-                      </div>
-                    </ScrollReveal>
-                  ))}
-                  {academicCerts.length === 0 && <p className="text-light text-center">No academic certificates listed.</p>}
-                </div>
-              </div>
-              
-              <div>
-                <ScrollReveal delay={200}><h3 className="mb-3 text-center" style={{fontFamily: 'var(--font-sans)', color: 'var(--text-secondary)'}}>Community Certificates</h3></ScrollReveal>
-                <div className="grid-1 gap-3">
-                  {communityCerts.map((cert, idx) => (
-                    <ScrollReveal delay={idx * 150 + 300} key={cert.id}>
-                      <div className="card" style={{padding: '1.5rem'}}>
-                        <h4 style={{fontSize: '1.1rem', marginBottom: '0.5rem'}}>{cert.name}</h4>
-                        <p className="text-secondary text-sm">{cert.issuer} &bull; {cert.year}</p>
-                      </div>
-                    </ScrollReveal>
-                  ))}
-                  {communityCerts.length === 0 && <p className="text-light text-center">No community certificates listed.</p>}
-                </div>
-              </div>
-           </div>
-        </div>
-
       </div>
     </div>
   );

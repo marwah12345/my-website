@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { db } from "@/lib/db";
-import ScrollReveal from "@/components/ScrollReveal";
 import AutoSlideshow from "@/components/AutoSlideshow";
 import "./home.css";
 
@@ -20,8 +19,8 @@ export default async function Home() {
     <>
       {/* HERO SECTION */}
       <section className="hero">
-        <div className="container flex items-center gap-4" style={{flexWrap: 'wrap-reverse'}}>
-          <ScrollReveal delay={100} styleClass="hero-content">
+        <div className="container">
+          <div className="hero-content">
             <h1 className="hero-title">Dr. Marwah Al-Helali</h1>
             <h2 className="hero-subtitle">PhD Researcher in AI & Deep Learning</h2>
             <div className="social-links mt-6">
@@ -79,9 +78,9 @@ export default async function Home() {
               </a>
 
             </div>
-          </ScrollReveal>
+          </div>
           
-          <ScrollReveal delay={300} styleClass="hero-image-wrapper mx-auto">
+          <div className="hero-image-wrapper mx-auto">
             <Image 
               src="/uploads/profile.jpeg" 
               alt="Dr. Marwah Al-Helali" 
@@ -90,65 +89,54 @@ export default async function Home() {
               className="hero-image"
               priority
             />
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
       {/* PROFESSIONAL SUMMARY SECTION */}
-      <section className="section" style={{paddingTop: '3.5rem', paddingBottom: '3.5rem', background: 'linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%)'}}>
-        <div className="container" style={{maxWidth: '1000px'}}>
-          <ScrollReveal delay={100}>
-            <div style={{textAlign: 'center', marginBottom: '2.5rem'}}>
-              <h2 style={{
-                fontFamily: 'var(--font-serif)', 
-                fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', 
-                color: 'var(--primary)',
-                marginBottom: '0.5rem',
-                fontWeight: 700
-              }}>About Me</h2>
-              <div style={{
-                width: '60px',
-                height: '4px',
-                background: 'var(--accent)',
-                margin: '0 auto',
-                borderRadius: '2px'
-              }}></div>
-            </div>
-          </ScrollReveal>
+      <section className="section" style={{paddingTop: '2rem', paddingBottom: '2rem', background: 'linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%)'}}>
+        <div className="container" style={{maxWidth: '900px'}}>
+          <div style={{textAlign: 'center', marginBottom: '1.5rem'}}>
+            <h2 style={{
+              fontFamily: 'var(--font-serif)', 
+              fontSize: '1.5rem', 
+              color: 'var(--primary)',
+              marginBottom: '0',
+              fontWeight: 600
+            }}>About Me</h2>
+          </div>
           
-          <ScrollReveal delay={200}>
+          <div style={{
+            background: 'white',
+            borderRadius: '8px',
+            padding: '1.5rem',
+            boxShadow: '0 4px 12px -4px rgba(0,0,0,0.08)',
+            border: '1px solid var(--border)',
+            maxWidth: '850px',
+            margin: '0 auto'
+          }}>
             <div style={{
-              background: 'white',
-              borderRadius: '12px',
-              padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-              boxShadow: '0 8px 30px -8px rgba(0,0,0,0.1)',
-              border: '1px solid var(--border)',
-              maxWidth: '850px',
-              margin: '0 auto'
+              fontSize: '0.95rem',
+              lineHeight: '1.7',
+              color: 'var(--text-secondary)',
+              textAlign: 'left'
             }}>
-              <div style={{
-                fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
-                lineHeight: '1.9',
-                color: 'var(--text-secondary)',
-                textAlign: 'left'
-              }}>
-                <p style={{margin: 0, paddingLeft: '1rem', borderLeft: '3px solid var(--accent)'}}>
-                  I am a PhD Researcher in Artificial Intelligence and Deep Learning, with research interests in machine learning, deep learning, predictive modelling, and intelligent systems. My work focuses on developing advanced AI methods to solve complex real-world problems and generate meaningful, data-driven insights. I hold a First-Class Honours degree in Computer Science (Software Engineering) and have published multiple works in artificial intelligence and machine learning. I am particularly interested in developing robust and practical AI solutions and translating advanced computational methods into real-world applications.
-                </p>
-              </div>
+              <p style={{margin: 0, paddingLeft: '0.75rem', borderLeft: '3px solid var(--accent)'}}>
+                I am a PhD Researcher in Artificial Intelligence and Deep Learning, with research interests in machine learning, deep learning, predictive modelling, and intelligent systems. My work focuses on developing advanced AI methods to solve complex real-world problems and generate meaningful, data-driven insights. I hold a First-Class Honours degree in Computer Science (Software Engineering) and have published multiple works in artificial intelligence and machine learning. I am particularly interested in developing robust and practical AI solutions and translating advanced computational methods into real-world applications.
+              </p>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
       {/* FULL STATIC EDUCATION SECTION AS VERTICAL TIMELINE */}
       <section className="section" id="about" style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
         <div className="container">
-          <ScrollReveal delay={100} styleClass="text-center mb-4">
-            <h2 className="section-title mb-k" style={{display: 'inline-block', fontSize: '1.5rem'}}>Education</h2>
-          </ScrollReveal>
+          <div className="text-center mb-4">
+            <h2 className="section-title mb-k" style={{display: 'inline-block', fontSize: '1.3rem'}}>Education</h2>
+          </div>
           
-          <div className="mt-4" style={{maxWidth: '950px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem'}}>
+          <div className="mt-4" style={{maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem'}}>
             {education.map((ed, index) => {
               // Determine Photos based on degree matching
               let photos = [];
@@ -159,57 +147,55 @@ export default async function Home() {
               }
 
               return (
-                <ScrollReveal delay={200} key={ed.id}>
-                  <div style={{ 
-                    position: 'relative', 
-                    paddingLeft: '2rem', 
-                    paddingBottom: index === education.length - 1 ? '0' : '2rem',
-                    borderLeft: index === education.length - 1 ? '2px solid transparent' : '2px solid var(--border)'
-                  }}>
-                    {/* Timeline Node */}
+                <div key={ed.id} style={{ 
+                  position: 'relative', 
+                  paddingLeft: '1.5rem', 
+                  paddingBottom: index === education.length - 1 ? '0' : '1.5rem',
+                  borderLeft: index === education.length - 1 ? '2px solid transparent' : '2px solid var(--border)'
+                }}>
+                  {/* Timeline Node */}
+                  <div style={{
+                    position: 'absolute',
+                    left: '-7px',
+                    top: '3px',
+                    width: '12px',
+                    height: '12px',
+                    borderRadius: '50%',
+                    background: 'var(--primary)',
+                    boxShadow: '0 0 0 3px white, 0 0 0 4px var(--border)'
+                  }}></div>
+
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'flex-start' }}>
+                    {/* Academic Content */}
+                    <div style={{ flex: '1', minWidth: '260px' }}>
+                      <div style={{color: 'var(--accent)', fontWeight: 'bold', marginBottom: '0.25rem', letterSpacing: '0.3px', fontSize: '0.7rem'}}>{ed.yearStart} - {ed.yearEnd || 'Present'}</div>
+                      <h3 className="mb-2" style={{fontSize: '1rem', color: 'var(--text-primary)', lineHeight: 1.3, fontWeight: 600}}>{ed.degree}</h3>
+                      <div style={{fontFamily: 'var(--font-serif)', color: 'var(--text-secondary)', fontSize: '0.9rem'}} className="mb-3">
+                        {ed.institution}
+                      </div>
+                      <p style={{lineHeight: '1.6', fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0}}>{ed.description}</p>
+                    </div>
+
+                    {/* Compact Image Slideshow Thumbnail */}
                     <div style={{
-                      position: 'absolute',
-                      left: '-9px',
-                      top: '3px',
-                      width: '16px',
-                      height: '16px',
-                      borderRadius: '50%',
-                      background: 'var(--primary)',
-                      boxShadow: '0 0 0 3px white, 0 0 0 5px var(--border)'
-                    }}></div>
-
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.2rem', alignItems: 'flex-start' }}>
-                      {/* Academic Content */}
-                      <div style={{ flex: '1', minWidth: '260px' }}>
-                        <div style={{color: 'var(--accent)', fontWeight: 'bold', marginBottom: '0.25rem', letterSpacing: '0.5px', fontSize: '0.75rem'}}>{ed.yearStart} - {ed.yearEnd || 'Present'}</div>
-                        <h3 className="mb-2" style={{fontSize: '1.1rem', color: 'var(--text-primary)', lineHeight: 1.3}}>{ed.degree}</h3>
-                        <div style={{fontFamily: 'var(--font-serif)', color: 'var(--text-secondary)', fontSize: '0.95rem'}} className="mb-3">
-                          {ed.institution}
+                      flex: '0 0 200px', 
+                      height: '140px', 
+                      position: 'relative', 
+                      borderRadius: '8px', 
+                      overflow: 'hidden', 
+                      boxShadow: '0 4px 12px -4px rgba(0,0,0,0.15)',
+                      border: '1px solid var(--border)'
+                    }}>
+                      {photos.length > 0 ? (
+                        <AutoSlideshow images={photos} height="100%" borderRadius="8px" interval={4000} />
+                      ) : (
+                        <div style={{width: '100%', height: '100%', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                            <span className="text-secondary text-xs">No Photos</span>
                         </div>
-                        <p style={{lineHeight: '1.6', fontSize: '0.88rem', color: 'var(--text-secondary)'}}>{ed.description}</p>
-                      </div>
-
-                      {/* Compact Image Slideshow Thumbnail */}
-                      <div style={{
-                        flex: '0 0 240px', 
-                        height: '170px', 
-                        position: 'relative', 
-                        borderRadius: 'var(--radius-lg)', 
-                        overflow: 'hidden', 
-                        boxShadow: '0 8px 20px -8px rgba(0,0,0,0.2)',
-                        border: '1px solid var(--border)'
-                      }}>
-                        {photos.length > 0 ? (
-                          <AutoSlideshow images={photos} height="100%" borderRadius="var(--radius-lg)" interval={4000} />
-                        ) : (
-                          <div style={{width: '100%', height: '100%', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                              <span className="text-secondary text-xs">No Photos</span>
-                          </div>
-                        )}
-                      </div>
+                      )}
                     </div>
                   </div>
-                </ScrollReveal>
+                </div>
               );
             })}
           </div>
