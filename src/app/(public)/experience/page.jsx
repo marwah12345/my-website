@@ -19,14 +19,6 @@ export default async function ExperiencePage() {
       height: '100%',
       display: 'flex',
       flexDirection: 'column'
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'translateY(-2px)';
-      e.currentTarget.style.boxShadow = '0 8px 16px -4px rgba(0,0,0,0.12)';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'translateY(0)';
-      e.currentTarget.style.boxShadow = '0 2px 8px -2px rgba(0,0,0,0.08)';
     }}>
       <div style={{fontSize: '0.75rem', fontWeight: 600, color: '#64748b', letterSpacing: '0.5px', marginBottom: '0.5rem'}}>
         {exp.dateRange || 'Ongoing'}
