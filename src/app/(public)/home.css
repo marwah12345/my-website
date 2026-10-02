@@ -335,21 +335,21 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 2.25rem 0 1.5rem;
+    padding: 2rem 0 1.25rem;
   }
 
   .hero-title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 1rem !important;
+    font-size: 0.92rem;
+    margin-bottom: 0.85rem !important;
   }
 
   .hero-image-wrapper {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
 
   .hero-image {
@@ -358,13 +358,13 @@
 
   .social-links {
     gap: 0.4rem !important;
-    margin-top: 0.85rem !important;
+    margin-top: 0.75rem !important;
   }
 
   .social-pill {
-    font-size: 0.65rem;
-    padding: 0.35rem 0.5rem 0.35rem 0.3rem;
-    gap: 0.35rem;
+    font-size: 0.64rem;
+    padding: 0.4rem 0.5rem 0.4rem 0.4rem;
+    gap: 0.4rem;
   }
 
   .social-pill-icon {
@@ -378,7 +378,21 @@
   }
 
   .social-pill-label {
-    font-size: 0.65rem;
+    font-size: 0.64rem;
+  }
+  
+  /* Make everything even more compact on very small screens */
+  [style*="padding: '0.85rem'"] {
+    padding: 0.7rem !important;
+  }
+  
+  [style*="fontSize: '1.5rem'"] {
+    font-size: 1.3rem !important;
+  }
+  
+  [style*="marginBottom: '1rem'"],
+  [style*="marginBottom: '1.5rem'"] {
+    margin-bottom: 0.75rem !important;
   }
 }
 
@@ -614,20 +628,56 @@
   [style*="gap: '1.25rem'"],
   [style*="gap: '1.2rem'"],
   [style*="gap: 'clamp"] {
-    gap: 1rem !important;
+    gap: 0.85rem !important;
   }
 
   /* Ensure proper padding on mobile */
   [style*="padding: 'clamp"] {
-    padding: 1rem !important;
+    padding: 0.85rem !important;
   }
 
   /* Fix max-width containers on mobile */
+  [style*="maxWidth: '1100px'"],
   [style*="maxWidth: '1000px'"],
   [style*="maxWidth: '950px'"],
+  [style*="maxWidth: '900px'"],
   [style*="maxWidth: '850px'"] {
     max-width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+  
+  /* Reduce section padding on mobile */
+  .section {
+    padding: 1.25rem 0 !important;
+  }
+  
+  /* Make all page headers more compact */
+  [style*="padding: '2rem 0 1.5rem'"] {
+    padding: 1.5rem 0 1rem !important;
+  }
+  
+  /* Reduce page title size on mobile */
+  [style*="fontSize: '1.8rem'"] {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Make cards more compact on mobile */
+  [style*="padding: '1.2rem'"],
+  [style*="padding: '1rem'"] {
+    padding: 0.85rem !important;
+  }
+  
+  /* Reduce font sizes for better readability */
+  [style*="fontSize: '0.95rem'"] {
+    font-size: 0.88rem !important;
+  }
+  
+  [style*="fontSize: '1.1rem'"] {
+    font-size: 0.98rem !important;
+  }
+  
+  [style*="fontSize: '1.3rem'"] {
+    font-size: 1.1rem !important;
   }
 }
