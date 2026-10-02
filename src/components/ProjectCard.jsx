@@ -61,12 +61,18 @@ export default function ProjectCard({ project }) {
             muted={!isHovering}
             playsInline
             autoPlay
+            preload="auto"
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover'
             }}
             controls={isHovering}
+            onError={(e) => {
+              console.error('Video failed to load:', project.video);
+              e.target.style.display = 'none';
+              e.target.parentElement.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#f0f9ff;color:#64748b;font-size:0.9rem;">Video not available</div>';
+            }}
           />
         ) : project.image ? (
           <Image
