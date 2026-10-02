@@ -10,6 +10,7 @@ export default function ProjectCard({ project }) {
   const handleMouseEnter = () => {
     setIsHovering(true);
     if (videoRef.current && project.video) {
+      videoRef.current.muted = false;
       videoRef.current.play().catch(e => console.log('Video play failed:', e));
     }
   };
@@ -17,9 +18,14 @@ export default function ProjectCard({ project }) {
   const handleMouseLeave = () => {
     setIsHovering(false);
     if (videoRef.current && project.video) {
+      videoRef.current.muted = true;
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
+  };
+
+  const handleTouchStart = () => {
+    setIsHovering(true);
   };
 
   return (
@@ -37,7 +43,7 @@ export default function ProjectCard({ project }) {
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onTouchStart={handleMouseEnter}
+      onTouchStart={handleTouchStart}
     >
       {/* Media Area */}
       <div style={{
@@ -52,8 +58,9 @@ export default function ProjectCard({ project }) {
             ref={videoRef}
             src={project.video}
             loop
-            muted
+            muted={!isHovering}
             playsInline
+            autoPlay
             style={{
               width: '100%',
               height: '100%',

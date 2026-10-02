@@ -246,20 +246,25 @@
   }
 
   .social-links {
-    display: flex !important;
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     width: 100%;
     gap: 0.5rem !important;
     margin-top: 1rem !important;
-    align-items: stretch !important;
+  }
+  
+  .social-links a:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
   }
 
   .social-pill {
     width: 100%;
     justify-content: flex-start;
-    font-size: 0.7rem;
-    padding: 0.5rem 0.75rem 0.5rem 0.5rem;
-    gap: 0.5rem;
+    font-size: 0.68rem;
+    padding: 0.45rem 0.6rem 0.45rem 0.45rem;
+    gap: 0.45rem;
   }
 
   .social-pill-icon {
@@ -298,7 +303,17 @@
     flex: 0 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    height: 180px !important;
+    height: 160px !important;
+  }
+  
+  /* Make education entries more compact on mobile */
+  #about .mt-4 > div {
+    gap: 1rem !important;
+  }
+  
+  #about .mt-4 > div > div {
+    padding-left: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 
   /* Force all grid layouts to single column on mobile */
