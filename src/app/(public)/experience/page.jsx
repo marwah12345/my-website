@@ -26,23 +26,24 @@ export default async function ExperiencePage() {
       <div style={{display: 'flex', gap: '0.75rem', alignItems: 'flex-start', marginBottom: '0.6rem'}}>
         {exp.image && (
           <div style={{
-            width: '48px',
-            height: '48px',
+            width: '64px',
+            height: '64px',
             flexShrink: 0,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             background: '#f8fafc',
             borderRadius: '6px',
-            padding: '0.4rem',
+            padding: '0.5rem',
             border: '1px solid var(--border)'
           }}>
             <Image 
               src={exp.image} 
               alt={exp.organization}
-              width={48}
-              height={48}
+              width={64}
+              height={64}
               style={{width: '100%', height: '100%', objectFit: 'contain'}}
+              unoptimized
             />
           </div>
         )}

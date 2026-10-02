@@ -18,8 +18,8 @@ export default async function BooksPage() {
       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap'}}>
         {book.coverImage && (
           <div style={{
-            width: '60px',
-            height: '60px',
+            width: '80px',
+            height: '80px',
             flexShrink: 0,
             display: 'flex',
             alignItems: 'center',
@@ -32,8 +32,8 @@ export default async function BooksPage() {
             <Image 
               src={book.coverImage} 
               alt={book.title}
-              width={60}
-              height={60}
+              width={80}
+              height={80}
               style={{width: '100%', height: '100%', objectFit: 'contain'}}
             />
           </div>
