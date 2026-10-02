@@ -1,9 +1,22 @@
 import { db } from "@/lib/db";
+import Image from "next/image";
 
 export default async function BooksPage() {
   const books = await db.book.findMany({ orderBy: { year: 'desc' } });
 
-  const BookRow = ({ book }) => (
+  // Map book titles to image paths
+  const getImagePath = (title) => {
+    const imageMap = {
+      'An Adaptive Model for Unmasking Zero-Day Threats Using Federated Learning': '/uploads/An Adaptive Model for Unmasking Zero-Day Threats Using Federated Learning.png',
+      'Deep Architectural Classification for Heart Disease Prediction': '/uploads/Deep-Architectural-Classification-for-Heart-Disease-Prediction.png'
+    };
+    return imageMap[title] || null;
+  };
+
+  const BookRow = ({ book }) => {
+    const imagePath = getImagePath(book.title);
+    
+    return (
     <div style={{
       padding: '1.2rem',
       background: 'white',
@@ -14,7 +27,17 @@ export default async function BooksPage() {
       transition: 'all 0.2s ease',
       marginBottom: '0.75rem'
     }}>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.75rem', flexWrap: 'wrap'}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap'}}>
+        {imagePath && (
+          <div style={{width: '140px', height: '100px', position: 'relative', borderRadius: '4px', overflow: 'hidden', flexShrink: 0}}>
+            <Image 
+              src={imagePath}
+              alt={book.title}
+              fill
+              style={{objectFit: 'cover'}}
+            />
+          </div>
+        )}
         <div style={{flex: 1, minWidth: '250px'}}>
           <h3 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.4'}}>
             {book.link ? (
@@ -83,7 +106,8 @@ export default async function BooksPage() {
         </div>
       </div>
     </div>
-  );
+    );
+  };
 
   return (
     <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fafafa'}}>
