@@ -122,7 +122,7 @@ export default async function Home() {
               textAlign: 'left'
             }}>
               <p style={{margin: 0, paddingLeft: '0.75rem', borderLeft: '3px solid var(--accent)'}}>
-                I am a PhD Researcher in Artificial Intelligence and Deep Learning, with research interests in machine learning, deep learning, predictive modelling, and intelligent systems. My work focuses on developing advanced AI methods to solve complex real-world problems and generate meaningful, data-driven insights. I hold a First-Class Honours degree in Computer Science (Software Engineering) and have published multiple works in artificial intelligence and machine learning. I am particularly interested in developing robust and practical AI solutions and translating advanced computational methods into real-world applications.
+                PhD Researcher in Artificial Intelligence and Deep Learning, working on computer vision, multimodal learning and models that generalize to new environments. I hold a First-Class Honours degree in Computer Science (CGPA 3.73/4) and have published in machine learning and AI. My work focuses on building practical AI systems that perform reliably in the real world.
               </p>
             </div>
           </div>
