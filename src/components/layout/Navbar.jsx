@@ -52,9 +52,6 @@ export default function Navbar() {
           <Link href="/certificates" className={pathname.startsWith("/certificates") ? "active" : ""} onClick={closeMenu}>
             Certificates
           </Link>
-          <Link href="/blog" className={pathname.startsWith("/blog") ? "active" : ""} onClick={closeMenu}>
-            Blog
-          </Link>
         </nav>
       </div>
     </header>

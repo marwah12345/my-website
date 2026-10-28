@@ -11,9 +11,7 @@ export default async function AdminDashboard() {
   const counts = {
     papers: await db.paper.count(),
     books: await db.book.count(),
-    projects: await db.project.count(),
-    blogs: await db.blogPost.count(),
-    comments: await db.comment.count({ where: { approved: false } }) // pending comments
+    projects: await db.project.count()
   };
 
   return (
@@ -31,14 +29,6 @@ export default async function AdminDashboard() {
         <div className="card text-center">
           <h3>Projects</h3>
           <p style={{fontSize: '2rem', color: 'var(--primary)', fontWeight: 'bold'}}>{counts.projects}</p>
-        </div>
-        <div className="card text-center">
-          <h3>Blog Posts</h3>
-          <p style={{fontSize: '2rem', color: 'var(--primary)', fontWeight: 'bold'}}>{counts.blogs}</p>
-        </div>
-        <div className="card text-center" style={{borderColor: counts.comments > 0 ? 'var(--accent)' : ''}}>
-          <h3>Pending Comments</h3>
-          <p style={{fontSize: '2rem', color: 'var(--accent)', fontWeight: 'bold'}}>{counts.comments}</p>
         </div>
       </div>
       
