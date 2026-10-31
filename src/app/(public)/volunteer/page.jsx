@@ -4,7 +4,7 @@ import Image from "next/image";
 export default async function VolunteerPage() {
   const volunteers = await db.experience.findMany({ 
     where: { type: 'volunteer' },
-    orderBy: { id: 'desc' }
+    orderBy: { createdAt: 'desc' }
   });
 
   return (
