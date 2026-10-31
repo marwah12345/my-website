@@ -66,6 +66,7 @@ model Award {
   title         String
   issuer        String?
   year          String?
+  image         String?
   createdAt     DateTime @default(now())
 }
 

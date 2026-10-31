@@ -33,10 +33,16 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/certificates`,
+      url: `${baseUrl}/awards`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/volunteer`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
   ];
 }
