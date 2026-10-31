@@ -77,6 +77,16 @@ export default async function Home() {
                 <span className="social-pill-label">ResearchGate</span>
               </a>
 
+              {/* Scopus */}
+              <a href="https://www.scopus.com/authid/detail.uri?authorId=60913470900" target="_blank" rel="noopener noreferrer" className="social-pill" aria-label="Scopus" style={{'--pill-color': '#E9711C'}}>
+                <span className="social-pill-icon" style={{background: 'rgba(233,113,28,0.18)', color: '#E9711C'}}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 19.059l-4.777-4.776c-.663 1.103-1.486 2.076-2.451 2.896l4.776 4.776L24 19.059zm-9.534-9.534c-1.45 0-2.627 1.177-2.627 2.627 0 1.45 1.177 2.627 2.627 2.627 1.45 0 2.627-1.177 2.627-2.627 0-1.45-1.177-2.627-2.627-2.627zm-3.711 8.338c-2.573 0-4.658-2.085-4.658-4.658S8.182 8.547 10.755 8.547c2.573 0 4.658 2.085 4.658 4.658s-2.085 4.658-4.658 4.658zM10.755 5.673c-3.995 0-7.532 3.537-7.532 7.532s3.537 7.532 7.532 7.532c1.421 0 2.752-.406 3.876-1.097l.015-.009c2.015-1.25 3.367-3.459 3.367-5.967 0-3.995-2.619-7.532-7.258-7.991z"/>
+                  </svg>
+                </span>
+                <span className="social-pill-label">Scopus</span>
+              </a>
+
             </div>
           </div>
           
