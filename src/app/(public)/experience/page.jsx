@@ -98,7 +98,7 @@ export default async function ExperiencePage() {
           </div>
         )}
 
-        {/* WORK EXPERIENCE */}
+        {/* INDUSTRY EXPERIENCE */}
         {work.length > 0 && (
           <div>
             <h2 style={{
@@ -108,7 +108,7 @@ export default async function ExperiencePage() {
               marginBottom: '1rem',
               paddingLeft: '0.75rem',
               borderLeft: '3px solid var(--primary)'
-            }}>Work Experience</h2>
+            }}>Industry Experience</h2>
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem'}}>
               {work.map((exp) => (
                 <ExperienceCard exp={exp} color="var(--primary)" key={exp.id} />
