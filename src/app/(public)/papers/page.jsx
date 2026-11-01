@@ -18,8 +18,8 @@ export default async function PapersPage() {
       transition: 'all 0.2s ease',
       marginBottom: '0.75rem'
     }}>
-      <div style={{display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem'}}>
-        <div style={{flex: '1', minWidth: '300px'}}>
+      <div style={{display: 'flex', flexDirection: 'column', gap: '0.75rem'}}>
+        <div style={{flex: '1'}}>
           <h3 style={{fontSize: '0.95rem', color: 'var(--text-primary)', lineHeight: '1.4', marginBottom: '0.4rem', fontWeight: 600}}>
             {pub.link ? (
               <a href={pub.link} target="_blank" rel="noopener noreferrer" style={{color: 'var(--primary)', textDecoration: 'none'}}>
@@ -63,6 +63,7 @@ export default async function PapersPage() {
           <a href={pub.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{
             display: 'inline-flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '0.4rem',
             padding: '0.4rem 0.8rem',
             fontSize: '0.75rem',

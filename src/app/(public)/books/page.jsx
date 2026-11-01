@@ -15,7 +15,7 @@ export default async function BooksPage() {
       transition: 'all 0.2s ease',
       marginBottom: '0.75rem'
     }}>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap'}}>
+      <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
         {book.coverImage && (
           <div style={{
             width: '80px',
@@ -38,7 +38,7 @@ export default async function BooksPage() {
             />
           </div>
         )}
-        <div style={{flex: 1, minWidth: '250px'}}>
+        <div style={{flex: '1'}}>
           <h3 style={{fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: '1.4'}}>
             {book.link ? (
               <a href={book.link} target="_blank" rel="noopener noreferrer" style={{color: 'var(--primary)', textDecoration: 'none'}}>
