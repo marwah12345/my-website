@@ -252,12 +252,6 @@
     gap: 0.5rem !important;
     margin-top: 1rem !important;
   }
-  
-  .social-links a:last-child {
-    grid-column: 1 / -1;
-    max-width: 50%;
-    margin: 0 auto;
-  }
 
   .social-pill {
     width: 100%;
