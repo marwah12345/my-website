@@ -190,8 +190,9 @@
   .social-links {
     justify-content: flex-start;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    width: min(100%, 500px);
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 500px;
     gap: 0.75rem;
   }
 
