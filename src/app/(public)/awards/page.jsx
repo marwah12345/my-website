@@ -2,7 +2,12 @@ import { db } from "@/lib/db";
 import Image from "next/image";
 
 export default async function AwardsPage() {
-  const awards = await db.award.findMany({ orderBy: { year: 'desc' } });
+  const awards = await db.award.findMany({ 
+    orderBy: [
+      { year: 'desc' },
+      { createdAt: 'desc' }
+    ]
+  });
 
   return (
     <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fafafa'}}>
